@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
 import decouvrirCentre from '../../images/decouvrirCentre/bsm_le_centre.png';
-import eau from '../../images/decouvrirCentre/bsm_motif_eau.png';
+import baseBackground from '../../images/decouvrirCentre/base_background.png';
 import { TimelineLite, TweenLite, TimelineMax } from "gsap/all";
 import WaterWave from 'react-water-wave';
 
@@ -68,11 +68,11 @@ export default class DecouvrirCentre extends Component{
                             </div>
                         </section>
                         <section className="bottomBloc_2">
-                            <div>
-                                <img src={eau} />
+                            <div style={{backgroundImage: `url(${baseBackground})`}}>
+                                <h1 className="light">Du béton brut, de l’acier, de l’eau, de la pénombre, une histoire…et de l’art !</h1>
                             </div>
                             <div>
-                                <img src={eau} />
+                                {/* <img src={eau} /> */}
                             </div>
                         </section>
                     </section>
