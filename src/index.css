@@ -1,13 +1,382 @@
+@font-face {
+  font-family: 'GothamBold';
+  src: local('GothamBold'), url(./fonts/GothamBold.ttf);
+}
+@font-face {
+  font-family: 'GothamBook';
+  src: local('GothamBook'), url(./fonts/GothamBook.ttf);
+}
+@font-face {
+  font-family: 'SofiaProBold';
+  src: local('SofiaProBold'), url(./fonts/SofiaProBold.otf);
+}
+@font-face {
+  font-family: 'SofiaProLight';
+  src: local('SofiaProLight'), url(./fonts/SofiaProLight.otf);
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #000000;
+}
+p{
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, p, span, button{
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  color: #000;
+}
+button{
+  transition: all ease 0.25s;
+  outline:none;
+}
+.mainButton{
+  background-color: #0000CA;
+  color: #fff;
+  font-size: 16px;
+  font-family: SofiaProLight;
+}
+.light{
+  color:#fff;
+}
+h1{
+  font-family: GothamBold;
+}
+h2{
+  font-family: GothamBold;
+}
+h3{
+  font-family: GothamBold;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+h4{
+  font-family: GothamBold;
+  font-size: 21px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+p, span{
+  font-family: SofiaProLight;
+}
+.first{
+  height: 500px;
+  background-color: #e6e6e6;
+}
+.second{
+  height: 500px;
+  background-color: #6e6e6e;
+}
+.third{
+  height: 500px;
+  background-color: #666666;
+}
+#container {
+  width: 100%;
+  height: 100%; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.panel {
+  position: absolute;
+  will-change: transform;
+}
+
+
+
+.container{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.m_order_2{
+  height: 150px;
+  width: 150px;
+}
+
+
+/* HOME */
+
+.homePage_ctn{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  font-family: GothamBold, Arial, sans-serif;
+  font-size: 21px;
+}
+.homePage_ctn p{
+  margin: 7px;
+}
+.homePage_ctn span{
+  font-family: GothamBook;
+}
+.homePage_bloc{
+  height: 100%;
+}
+.homePage_bloc_1{
+  width: 45%;
+}
+.homePage_bloc_2{
+  width: 55%;
+  background-color: #B2B2B2;
+  display: flex;
+}
+.home_first_bloc{
+  display: flex;
+  height: 45%;
+}
+.home_first_bloc_1{
+  width: 60%;
+  background-color: #4D4D4D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home_first_bloc_2_inside_1{
+  height: 60%;
+  background-color: #7B7B7B;
+}
+.home_first_bloc_2_inside_2{
+  height: 40%;
+  background-color: #DEDEDE;
+}
+.home_first_bloc_2{
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.home_first_bloc_2 > a{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home_second_bloc{
+  height: 55%;
+  background-color: #101010;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home_final_bloc{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.home_final_bloc > *{
+  flex-basis: 100%;
+  text-align: center;
+}
+.menu_open:hover{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 860px) {
+  .homePage_ctn{
+      flex-wrap: wrap;
+  }
+  .m_order_1{
+      order: 1;
+      width: 100%;
+  }
+  .m_order_2{
+      order: 2;
+      width: 100%;
+  }
+}
+
+
+/* HEADER */ 
+
+.header{
+  position: absolute;
+  width: calc(100% - 75px);
+  top: 0;
+  padding: 37.5px 45px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+.header .burger{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  fill: #fff;
+}
+.header .social_medias{
+  display: flex;
+  justify-content: center;
+}
+.header .social_medias *{
+  margin-left: 20px;
+  fill: #fff;
+}
+.darkHeader .burger{
+  fill: #000;
+}
+.darkHeader .social_medias *{
+  fill: #000;
+}
+
+/* DECOUVRIR CENTRE */
+
+.decouvrirCentre{
+  width: 100%;
+}
+.decouvrirCentre .topBloc{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  min-height: 400px;
+  height: 600px;
+}
+.background_img_water{
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topBloc_nav{
+  z-index: 10;
+}
+.topBloc_nav div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-basis: 100%;
+}
+.topBloc_nav div button{
+  background-color: #fff;
+  color:#000;
+  border: none;
+  font-weight: bold;
+  font-size: 24px;
+  height: 38px;
+  padding: 0 20px;
+  margin: 0 50px;
+  min-width: 185px;
+}
+.topBloc_nav div button:hover{
+  cursor: pointer;
+  background-color: #0000CA;
+  color: #fff;
+  transition: all ease 0.25s;
+  transform: scale(1.1)
+}
+.decouvrirCentre h1{
+  font-size: 42pt;
+  margin: 0 0 50px;
+}
+.bottomBloc{
+  display: flex;
+  flex-wrap: wrap;
+}
+.bottomBloc_1{
+  background-color: #F7F7F7;
+  padding: 75px;
+  width: calc(60% - 150px);
+}
+.bottomBloc_1 div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.bottomBloc_1 div p{
+  font-family: SofiaProLight;
+  font-size: 15px;
+
+}
+.bottomBloc_1 div b{
+  font-family: SofiaProBold;
+}
+.bottomBloc_1 h2{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 34px;
+  font-family: SofiaProBold;
+}
+.bottomBloc_1 p{
+  margin-bottom: 50px;
+}
+.bottomBloc_2{
+  width: 40%;
+}
+
+/* INFOS PRATIQUES */
+
+.infosPratiques{
+  width: 100%;
+}
+.infosPratiques_topBloc{
+  position: relative;
+  display: block;
+  justify-content: center;
+  width: 100%;
+}
+.infosPratiques_topBloc_nav{
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 325px;
+}
+.infosPratiques_topBloc_nav div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.infosPratiques_topBloc_nav img{
+  height: 100%;
+  object-fit: cover;
+}
+.infosPratiques_topBloc_nav h1{
+  background-color: #fff;
+  font-size: 42px;
+  padding: 5px 15px;
+}
+.infosPratiques_middleBloc{
+  display: flex;
+  flex-wrap: wrap;
+}
+.infosPratiques_middleBloc .left{
+  width: 30%;
+}
+.infosPratiques_middleBloc .left_1{
+  padding: 75px;
+  background-color: #F7F7F7;
+  font-size: 16px;
+  text-align: left;
+}
+.infosPratiques_middleBloc .left_2{
+  background-color: #101010;
+}
+.infosPratiques_middleBloc .right{
+  width: 70%;
+  background-color: #fff;
 }
