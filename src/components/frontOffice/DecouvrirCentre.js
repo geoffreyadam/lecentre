@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
-import decouvrirCentre from '../../images/decouvrirCentre/bsm_le_centre.png';
-import baseBackground from '../../images/decouvrirCentre/base_background.png';
+import fondBase from '../../images/base3en1/fond_base.png';
+import formeBleue from '../../images/base3en1/forme_bleue.png';
+import photoBasDroite from '../../images/base3en1/photo_bas_droite.png';
 import { TimelineLite, TweenLite, TimelineMax } from "gsap/all";
 import WaterWave from 'react-water-wave';
 
@@ -40,7 +41,7 @@ export default class DecouvrirCentre extends Component{
                         <WaterWave 
                             className="background_img_water"
                             style={{ width: '100%', height: '600px', backgroundSize: 'cover', backgroundPosition: 'center' }}
-                            imageUrl={decouvrirCentre}
+                            imageUrl={fondBase}
                             perturbance="0.05"
                             dropRadius="15"
                         >
@@ -68,12 +69,11 @@ export default class DecouvrirCentre extends Component{
                             </div>
                         </section>
                         <section className="bottomBloc_2">
-                            <div style={{backgroundImage: `url(${baseBackground})`}}>
+                            <div style={{backgroundImage: `url(${formeBleue})`}}>
                                 <h1 className="light">Du béton brut, de l’acier, de l’eau, de la pénombre, une histoire…et de l’art !</h1>
                             </div>
-                            <div>
-                                {/* <img src={eau} /> */}
-                            </div>
+                            <section style={{backgroundImage: `url(${photoBasDroite})`}}>
+                            </section>
                         </section>
                     </section>
                 </section>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
-import infosPratiques from '../../images/decouvrirCentre/infos_pratiques.png';
-import plan from '../../images/decouvrirCentre/plan.png';
-import fondNewsletter from '../../images/decouvrirCentre/fond_newsletter.png';
+import fondInfos from '../../images/infosPratiques/fond_infos.png';
+import plan from '../../images/infosPratiques/plan.png';
+import fondNewsletters from '../../images/infosPratiques/fond_newsletters.png';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 export default class InfosPratiques extends Component{
@@ -17,7 +17,7 @@ export default class InfosPratiques extends Component{
                 <section className="infosPratiques">
                     <section className="infosPratiques_topBloc">
                         <div className="infosPratiques_topBloc_nav">
-                            <img src={infosPratiques} />
+                            <img src={fondInfos} />
                             <div>
                                 <h1>Infos pratiques</h1>
                             </div>
@@ -80,7 +80,7 @@ export default class InfosPratiques extends Component{
                                 </div>
                             </form>
                         </div>
-                        <div style={{backgroundImage: `url(${fondNewsletter})`}} className="right">
+                        <div style={{backgroundImage: `url(${fondNewsletters})`}} className="right">
                             <h4 className="light">Newsletters</h4>
                             <p className="light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam, sed diam voluptua. At vero eos et accusam.</p>
                             <form>
