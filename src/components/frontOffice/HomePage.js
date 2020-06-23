@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useCycle } from "framer-motion"
-import DecouvrirCentre from './DecouvrirCentre';
+import Base3en1 from './Base3en1';
 import fondBilletterie from '../../images/home/fond_billetterie.png';
 import fondDecouvrir from '../../images/home/fond_découvrir.png';
 import fondInfosPratiques from '../../images/home/fond_infos_pratiques.png';
@@ -24,9 +24,9 @@ export default function HomePage(){
                     <div className="homePage_ctn">
                         <section className="homePage_bloc homePage_bloc_1 m_order_2">
                             <div className="home_first_bloc">
-                                <div style={{backgroundImage: `url(${fondProjet})`}} className="home_first_bloc_1 menu_open" onClick={setOpenedPage}>
+                                <Link style={{backgroundImage: `url(${fondProjet})`}} className="home_first_bloc_1 menu_open" onClick={setOpenedPage} to="/base_3_en_1">
                                     <p className="light">Le projet Base 3 en 1</p>
-                                </div>
+                                </Link>
                                 <div className="home_first_bloc_2">
                                     <Link style={{backgroundImage: `url(${fondInfosPratiques})`}} to="/infosPratiques" className="home_first_bloc_2_inside_1 menu_open" onClick={setOpenedPage}>
                                         <p>Infos pratiques</p>
@@ -52,18 +52,13 @@ export default function HomePage(){
                                 </div>
                             </section>
                         </section>
-                        <section className="homePage_bloc homePage_bloc_2 m_order_1" onClick={() => _changePage("decouvrirCentre")}>
-                            <Link style={{backgroundImage: `url(${fondDecouvrir})`}} to="/decouvrirLeCentre" className="home_final_bloc menu_open">
+                        <section className="homePage_bloc homePage_bloc_2 m_order_1" onClick={() => _changePage("decouvrirLeCentre")}>
+                            <Link style={{backgroundImage: `url(${fondDecouvrir})`}} to="" className="home_final_bloc menu_open">
                                 <p className="light">Découvrir le Centre</p>
                             </Link>
                         </section>
                     </div>
                 }
-            {pageOpen === "decouvrirCentre" &&
-                <section>
-                    <DecouvrirCentre />
-                </section>
-            }
         </>
     )
 }

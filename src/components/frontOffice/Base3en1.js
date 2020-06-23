@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
 import fondBase from '../../images/base3en1/fond_base.png';
+import fondBassins from '../../images/base3en1/fond_bassins.png';
+import fondCentre from '../../images/base3en1/fond_centre.png';
+import fondCentreAsso from '../../images/base3en1/fond_centre_asso.png';
 import formeBleue from '../../images/base3en1/forme_bleue.png';
 import photoBasDroite from '../../images/base3en1/photo_bas_droite.png';
 import { TimelineLite, TweenLite, TimelineMax } from "gsap/all";
+import Three from 'three';
+import hoverEffect from 'hover-effect'
 import WaterWave from 'react-water-wave';
+import diss from '../../images/base3en1/diss.jpg'
 
-export default class DecouvrirCentre extends Component{
+export default class Base3en1 extends Component{
     constructor(props) {
         super(props);
-        this.logoContainer = null;
-        this.logoTween = null
+        this.logoTween = null;
+        this.hoverEffect = null;
+        this.state = {
+            image: fondBase,
+            image1Hover: fondBase,
+            image2Hover: undefined,
+            position: "previous"
+        }
     }
 
     componentDidMount(){
@@ -31,8 +43,42 @@ export default class DecouvrirCentre extends Component{
             attr:{"baseFrequency":0}
         });
         this.logoTween.play()
-	}
+        this.hoverEffect = new hoverEffect({
+            parent: document.getElementById("distortion"),
+            image1: fondCentre,
+            image2: fondCentre,
+            image3: fondBassins,
+            image4: fondCentreAsso,
+            displacementImage: diss
+        })
+    }
+
+    _changeImage(newImage){
+        const {image} = this.state;
+        if(newImage != image){
+            if(newImage === "fondCentre"){
+                this.setState({
+                    image: fondCentre
+                })
+            }else if(newImage === "fondBassins"){
+                this.setState({
+                    image: fondBassins
+                })
+            }else{
+                this.setState({
+                    image: fondCentreAsso
+                })
+            }
+        }
+    }
+
+    _resetImage(){
+        this.setState({
+            image: fondBase
+        })
+    }
     render(){
+        const {image} = this.state;
         return(
             <>
                 <Header contrast="light"/>
@@ -41,7 +87,7 @@ export default class DecouvrirCentre extends Component{
                         <WaterWave 
                             className="background_img_water"
                             style={{ width: '100%', height: '600px', backgroundSize: 'cover', backgroundPosition: 'center' }}
-                            imageUrl={fondBase}
+                            imageUrl={image}
                             perturbance="0.05"
                             dropRadius="15"
                         >
@@ -49,14 +95,14 @@ export default class DecouvrirCentre extends Component{
                             <div className="topBloc_nav">
                                 <h1 className="light">Base 3 en 1 c'est ...</h1>
                                 <div>
-                                    <button>Le Centre</button>
-                                    <button>Le Bassin des Lumières</button>
-                                    <button>Centre associatif</button>
+                                    <button onMouseOver={() => this._changeImage('fondCentre')} onMouseLeave={() => this._resetImage()}>Le Centre</button>
+                                    <button onMouseOver={() => this._changeImage('fondBassins')} onMouseLeave={() => this._resetImage()}>Le Bassin des Lumières</button>
+                                    <button onMouseOver={() => this._changeImage('fondCentreAsso')} onMouseLeave={() => this._resetImage()}>Centre associatif</button>
                                 </div>
                             </div>
                         )}
                         </WaterWave>
-                    </section>
+                    </section>   
                     <section className="bottomBloc">
                         <section className="bottomBloc_1">
                             <div>

@@ -278,6 +278,9 @@ p, span{
   justify-content: center;
   align-items: center;
 }
+.topBloc > div{
+  background-color: #0000CA;
+}
 .topBloc_nav{
   z-index: 10;
 }

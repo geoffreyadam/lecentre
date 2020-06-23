@@ -5,7 +5,6 @@ import {ReactComponent as Instagram} from '../../../images/icons/instagram.svg'
 import {ReactComponent as Twitter} from '../../../images/icons/twitter.svg'
 
 export default function Header(props){
-    console.log(props.contrast)
     return(
         <>
             <section className={props.contrast === "light" ? "lightHeader header" : "darkHeader header"}>

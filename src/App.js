@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
 import HomePage from './components/frontOffice/HomePage'
-import BackOfficeIndex from './components/backOffice/BackOfficeIndex'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import DecouvrirCentre from './components/frontOffice/DecouvrirCentre';
+import Base3en1 from './components/frontOffice/Base3en1';
 import InfosPratiques from './components/frontOffice/InfosPratiques';
 
 function App() {
@@ -14,8 +13,8 @@ function App() {
           <Switch>
             <Route path="/about">
             </Route>
-            <Route path="/decouvrirLeCentre">
-              <DecouvrirCentre />
+            <Route path="/base_3_en_1">
+              <Base3en1 />
             </Route>
             <Route path="/infosPratiques">
               <InfosPratiques />
