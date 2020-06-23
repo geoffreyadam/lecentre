@@ -82,6 +82,24 @@ h4{
 p, span{
   font-family: SofiaProLight;
 }
+.text_bold{
+  font-family: SofiaProBold;
+}
+.hide_XL{
+  display: block;
+}
+.hide_XS{
+  display: none;
+}
+@media screen and (max-width: 860px) {
+  .hide_XS{
+    display: block;
+  }
+  .hide_XL{
+    display: none;
+  }
+}
+
 .first{
   height: 500px;
   background-color: #e6e6e6;
@@ -278,19 +296,19 @@ p, span{
   justify-content: center;
   align-items: center;
 }
-.topBloc > div{
+.decouvrirCentre .topBloc > div{
   background-color: #0000CA;
 }
-.topBloc_nav{
+.decouvrirCentre .topBloc_nav{
   z-index: 10;
 }
-.topBloc_nav div{
+.decouvrirCentre .topBloc_nav div{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-basis: 100%;
 }
-.topBloc_nav div button{
+.decouvrirCentre .topBloc_nav div button{
   background-color: #fff;
   color:#000;
   border: none;
@@ -300,8 +318,9 @@ p, span{
   padding: 0 20px;
   margin: 0 50px;
   min-width: 185px;
+  font-family: GothamBold;
 }
-.topBloc_nav div button:hover{
+.decouvrirCentre .topBloc_nav div button:hover{
   cursor: pointer;
   background-color: #0000CA;
   color: #fff;
@@ -537,4 +556,238 @@ p, span{
     flex-basis: 100%;
     padding: 25px;
   }
+}
+
+
+/* BILLETTERIE */
+
+.billetterie_topBloc{
+  position: relative;
+  display: block;
+  justify-content: center;
+  width: 100%;
+}
+.billetterie_topBloc_nav{
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 200px;
+}
+.billetterie_topBloc_nav div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.billetterie_topBloc_nav img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.billetterie_topBloc_nav h1{
+  background-color: #fff;
+  font-size: 42px;
+  padding: 5px 35px;
+  min-width: 250px;
+}
+.billetterie_bottomBloc{
+  display: flex;
+  flex-wrap: wrap;
+  font-family: SofiaProLight;
+}
+.billetterie_bottomBloc .left{
+  padding: 75px;
+  background-color: #F7F7F7;
+  width: calc(60% - 150px);
+  text-align: left;
+}
+.billetterie_bottomBloc .left h2{
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-family: SofiaProBold;
+}
+.billetterie_bottomBloc .recapInfos{
+  margin-top: 25px;
+}
+.billetterie_bottomBloc .tarifs{
+  margin-top: 45px;
+}
+.billetterie_bottomBloc .tarifsHead{
+  display: flex;
+  margin-bottom: 15px;
+}
+.billetterie_bottomBloc .tarifsHead p{
+  width: 150px;
+}
+.billetterie_bottomBloc .tarifsHead :nth-child(1){
+  width: 200px;
+}
+.billetterie_bottomBloc .tarifsBody{
+  display: flex;
+  flex-wrap: wrap;
+}
+.billetterie_bottomBloc .singleTarif{
+  display: flex;
+  flex-basis: 100%;
+  margin-bottom: 10px;
+  height: fit-content;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #707070;
+}
+.billetterie_bottomBloc .singleTarif p{
+  width: 150px;
+}
+.billetterie_bottomBloc .singleTarif p:nth-child(1){
+  width: 200px;
+}
+.billetterie_bottomBloc .singleTarif select{
+  border: 1px solid #707070;
+  border-radius: 0;
+  font-family: SofiaProLight;
+  height: 26px;
+  min-width: 75px;
+}
+.billetterie_bottomBloc .singleTarif option{
+  font-family: SofiaProLight;
+}
+.billetterie_bottomBloc .infoTarif p{
+  font-family: SofiaProLight;
+  font-size: 14px;
+}
+.billetterie_bottomBloc .dates{
+  margin-top: 25px;
+}
+.billetterie_bottomBloc h3{
+  font-family: SofiaProBold;
+}
+.billetterie_bottomBloc .active{
+  font-family: SofiaProBold;
+}
+.billetterie_bottomBloc .right{
+  background-color: #fff;
+  width: 40%;
+  position: relative;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+}
+.billetterie_bottomBloc .right_1{
+  padding: 75px;
+  text-align: left;
+  width: 100%;
+}
+.billetterie_bottomBloc .right_2{
+  padding: 75px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+}
+.billetterie_bottomBloc .singleRecap{
+  margin-bottom: 15px;
+}
+.billetterie_bottomBloc .total{
+  border-top: 0.1px solid #fff;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.billetterie_bottomBloc form{
+  display: flex;
+  flex-wrap: wrap;
+}
+.billetterie_bottomBloc form div{
+  text-align: left;
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.billetterie_bottomBloc form h4{
+  margin: 25px 0 0;
+}
+.billetterie_bottomBloc form .button{
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+}
+.billetterie_bottomBloc form div label{
+  color: #707070;
+  font-family: SofiaProMedium;
+  font-size: 14px;
+}
+.billetterie_bottomBloc form div input{
+  width: 100%;
+  border: 1px solid #707070;
+  padding: 10px;
+  outline: none;
+}
+.billetterie_bottomBloc form .paiements{
+  display: flex;
+}
+.billetterie_bottomBloc form .paiements .active{
+  border: 2px solid #0000CA;
+}
+.billetterie_bottomBloc form .paiements div{
+  border: 2px solid #fff;
+  background-color: #fff;
+  height: 75px;
+  width: 125px;
+  flex-basis: 125px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.billetterie_bottomBloc form .inputDate{
+  display: flex;
+  justify-content: flex-start;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+.billetterie_bottomBloc form .inputDate div{
+  flex-basis: 75px;
+  margin-right: 10px;
+}
+.billetterie_bottomBloc .valide{
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 35px;
+}
+.billetterie_bottomBloc .svg_ctn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+.billetterie_bottomBloc .svg_ctn svg{
+  width: 45px;
+  height: 45px;
+}
+.billetterie_bottomBloc .valide .pdf{
+  background-color: #E4E4E4;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  align-items: center;
+}
+.billetterie_bottomBloc .valide .pdf button{
+  margin: 25px 0;
+}
+
+@media screen and (max-width: 860px) {
+  .billetterie_bottomBloc .left{
+    padding: 25px;
+    flex-basis: 100%;
+  }
+  .billetterie_bottomBloc .right{
+    flex-basis: 100%;
+  }  
 }

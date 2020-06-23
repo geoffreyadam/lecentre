@@ -31,7 +31,7 @@ export default function HomePage(){
                                     <Link style={{backgroundImage: `url(${fondInfosPratiques})`}} to="/infosPratiques" className="home_first_bloc_2_inside_1 menu_open" onClick={setOpenedPage}>
                                         <p>Infos pratiques</p>
                                     </Link>
-                                    <Link style={{backgroundImage: `url(${fondBilletterie})`}} className="home_first_bloc_2_inside_2 menu_open">
+                                    <Link style={{backgroundImage: `url(${fondBilletterie})`}} className="home_first_bloc_2_inside_2 menu_open" to="/billetterie">
                                         <p>Billetterie</p>
                                     </Link>
                                     {/* <div

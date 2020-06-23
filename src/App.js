@@ -4,6 +4,7 @@ import HomePage from './components/frontOffice/HomePage'
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Base3en1 from './components/frontOffice/Base3en1';
 import InfosPratiques from './components/frontOffice/InfosPratiques';
+import Billetterie from './components/frontOffice/Billetterie';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
             </Route>
             <Route path="/infosPratiques">
               <InfosPratiques />
+            </Route>
+            <Route path="/billetterie">
+              <Billetterie />
             </Route>
             <Route path="/">
               <HomePage />
