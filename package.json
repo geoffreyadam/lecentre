@@ -13,8 +13,10 @@
     "jquery.ripples": "^0.6.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-gsap": "^2.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-scrollmagic": "^2.2.0",
     "react-transition-group": "^4.4.1",
     "react-water-wave": "^1.0.5",
     "three": "^0.117.1"

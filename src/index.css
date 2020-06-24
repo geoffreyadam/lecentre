@@ -210,6 +210,17 @@ p, span{
   justify-content: center;
   align-items: center;
 }
+.home_second_bloc a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.home_second_bloc a div{
+  flex-basis: 100%;
+}
 .home_final_bloc{
   height: 100%;
   width: 100%;
@@ -790,4 +801,221 @@ input::-webkit-inner-spin-button{
   .billetterie_bottomBloc .right{
     flex-basis: 100%;
   }  
+}
+
+
+/* PROGRAMMATION */
+
+.programmation{
+  width: 100%;
+  overflow: hidden;
+}
+.programmation_topBloc{
+  position: relative;
+  display: block;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.programmation_topBloc_nav{
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 100%;
+}
+.programmation_topBloc_nav > div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.programmation_topBloc_nav .filters{
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  justify-content: center;
+}
+.programmation_topBloc_nav .filters button{
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 21px;
+  font-family: SofiaProLight;
+  margin: 10px 20px;
+}
+.programmation_topBloc_nav .filters .active{
+  background-color: transparent;
+  border: none;
+  color: #000;
+  background-color: #fff;
+  height: 42px;
+  padding: 0 15px;
+  font-family: SofiaProBold;
+}
+.programmation_topBloc_nav img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.programmation_topBloc_nav h1{
+  font-size: 42px;
+  padding: 5px 35px;
+  min-width: 250px;
+  margin-bottom: 50px;
+}
+.programmation_topBloc .topScroll{
+  position: absolute;
+  bottom: 35px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.programmation_secondBloc{
+  position: fixed;
+  top: 100vh;
+  height: 100vh;
+  width: 100%;
+  margin-top: 25px;
+}
+.programmation_secondBloc img{
+  height: 80vh;
+}
+.programmation_secondBloc div{
+  position: absolute;
+  right: 10%;
+  top: 0;
+  width: 50%;
+  padding: 25px;
+  z-index: 50;
+  text-align: left;
+  max-width:300px;
+  padding-right: 50px;
+}
+.programmation_secondBloc h2{
+  margin-bottom: 20px;
+}
+.programmation_thirdBloc{
+  position: fixed;
+  top: 100vh;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.programmation_thirdBloc img{
+  height: 90%;
+}
+.programmation_fourthBloc{
+  position: fixed;
+  height: 100vh;
+  top: 100vh;
+  width: 100%;
+}
+.programmation_fourthBloc img{
+  height: 70%;
+}
+.programmation_fifthBloc{
+  position: fixed;
+  height: 100vh;
+  top: 100vh;
+  width: 100%;
+}
+.programmation_fifthBloc .fifthBloc_text{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 50%;
+  left: 10%;
+  top: 30%;
+  z-index: 30;
+}
+.programmation_fifthBloc .fifthBloc_text p{
+  flex-basis: 100%;
+  text-align: left;
+  margin: 10px 0;
+}
+.programmation_fifthBloc img{
+  height: 70%;
+  z-index: 20;
+  top: 20%;
+  position: absolute;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.triggerHelp{
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+  width: 100%;
+}
+.triggerHelp div{
+  height: 100vh;
+  background-color: red;
+  opacity: 0.5;
+  border: 1px solid black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 4000px;
+}
+
+.marker {
+  width: 100%;
+  left: 0;
+  pointer-events: none;
+  user-select: none;
+  z-index: 100;
+}
+
+.timeline-trigger {
+  position: fixed;
+  border: 1px solid blue;
+  z-index: 90;
+}
+
+.start-trigger {
+  border: 1px solid green;
+  position: absolute;
+}
+
+.end-trigger {
+  border: 1px solid red;
+  position: absolute;
+}
+
+/* PROGRAMMATION ANIMATIONS */
+
+.programmation_secondBloc{
 }

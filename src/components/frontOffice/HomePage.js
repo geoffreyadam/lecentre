@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useCycle } from "framer-motion"
-import Base3en1 from './Base3en1';
 import fondBilletterie from '../../images/home/fond_billetterie.png';
 import fondDecouvrir from '../../images/home/fond_découvrir.png';
 import fondInfosPratiques from '../../images/home/fond_infos_pratiques.png';
@@ -28,7 +27,7 @@ export default function HomePage(){
                                     <p className="light">Le projet Base 3 en 1</p>
                                 </Link>
                                 <div className="home_first_bloc_2">
-                                    <Link style={{backgroundImage: `url(${fondInfosPratiques})`}} to="/infosPratiques" className="home_first_bloc_2_inside_1 menu_open" onClick={setOpenedPage}>
+                                    <Link style={{backgroundImage: `url(${fondInfosPratiques})`}} to="/infos_pratiques" className="home_first_bloc_2_inside_1 menu_open" onClick={setOpenedPage}>
                                         <p>Infos pratiques</p>
                                     </Link>
                                     <Link style={{backgroundImage: `url(${fondBilletterie})`}} className="home_first_bloc_2_inside_2 menu_open" to="/billetterie">
@@ -46,14 +45,16 @@ export default function HomePage(){
                                 </div>
                             </div>
                             <section style={{backgroundImage: `url(${fondProgrammation})`}} className="home_second_bloc menu_open" onClick={setOpenedPage}>
-                                <div>
-                                    <p className="light">Programmation</p>
-                                    <span className="light">Expositions & ateliers</span>
-                                </div>
+                                <Link to="/programmation">
+                                    <div>
+                                        <p className="light">Programmation</p>
+                                        <span className="light">Expositions & ateliers</span>
+                                    </div>
+                                </Link>
                             </section>
                         </section>
                         <section className="homePage_bloc homePage_bloc_2 m_order_1" onClick={() => _changePage("decouvrirLeCentre")}>
-                            <Link style={{backgroundImage: `url(${fondDecouvrir})`}} to="" className="home_final_bloc menu_open">
+                            <Link style={{backgroundImage: `url(${fondDecouvrir})`}} to="/decouvrir_le_centre" className="home_final_bloc menu_open">
                                 <p className="light">Découvrir le Centre</p>
                             </Link>
                         </section>

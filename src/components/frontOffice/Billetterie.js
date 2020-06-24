@@ -221,19 +221,17 @@ export default class Billetterie extends Component{
                                 </>
                             }
                             {currentPage === 4 &&
-                                <>
-                                    <section className="valide">
-                                        <div className="svg_ctn">
-                                            <Check />
-                                        </div>
-                                        <h3>Votre commande N°3288 a été validée !</h3>
-                                        <p>Merci pour votre réservation.</p>
-                                        <p>Un e-mail vous a été envoyé avec le détail de la commande et vos billets.</p>
-                                        <div className="pdf">
-                                            <button className="mainButton">Télécharger les billets</button>
-                                        </div>
-                                    </section>
-                                </>
+                                <section className="valide">
+                                    <div className="svg_ctn">
+                                        <Check />
+                                    </div>
+                                    <h3>Votre commande N°3288 a été validée !</h3>
+                                    <p>Merci pour votre réservation.</p>
+                                    <p>Un e-mail vous a été envoyé avec le détail de la commande et vos billets.</p>
+                                    <div className="pdf">
+                                        <button className="mainButton">Télécharger les billets</button>
+                                    </div>
+                                </section>
                             }
                         </section>
                         <section className="right">
