@@ -13,7 +13,8 @@ export default class InfosPratiques extends Component{
             contact1: undefined,
             contact2: undefined,
             contact3: undefined,
-            contact4: undefined
+            contact4: undefined,
+            email: undefined
         }
     }
     
@@ -25,6 +26,21 @@ export default class InfosPratiques extends Component{
         axios
         .post('https://radiant-falls-78689.herokuapp.com/api/addContact/4v8e61bfdqs4789fgf32e38vcxq2ezafbv7489d123fvdeza45b3vfdgvfdfdzafbbb', {
             data
+        })
+        .then((response) =>{
+            console.log(response)
+        })
+        .catch((error) =>{
+            console.log(error)
+        })
+    }
+    _sendNewsletter(e){
+        const{email} = this.state;
+        e.preventDefault();
+        // const data = {email};
+        axios
+        .post('https://radiant-falls-78689.herokuapp.com/api/addNewsletter/4v8e61bfdqs4789fgf32e38vcxq2ezafbv7489d123fvdeza45b3vfdgvfdfdzafbbb', {
+            email
         })
         .then((response) =>{
             console.log(response)
@@ -106,11 +122,11 @@ export default class InfosPratiques extends Component{
                         <div style={{backgroundImage: `url(${fondNewsletters})`}} className="right">
                             <h4 className="light">Newsletters</h4>
                             <p className="light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam, sed diam voluptua. At vero eos et accusam.</p>
-                            <form>
+                            <form onSubmit={(e) => this._sendNewsletter(e)}>
                                 <div>
                                     <label for="Nom">Nom</label>
                                     <div>
-                                        <input type="text" name="Nom" required/>
+                                        <input type="text" name="Nom" value={this.state.email} required onChange={(e) => this.setState({email: e.target.value})}/>
                                         <button className="mainButton">Envoyer</button>
                                     </div>
                                 </div>
