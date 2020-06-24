@@ -173,7 +173,7 @@ export default class EnCours extends Component{
     }
     render(){
         const {currentScroll} = this.state;
-        const {currentPage} = this.props;
+        const {currentPage, changePage} = this.props;
         return(
             <>
                 <section className="programmation">
@@ -183,8 +183,8 @@ export default class EnCours extends Component{
                             <div>
                                 <h1 className="light">Programme</h1>
                                 <div className="filters">
-                                    <button className={currentPage === 1 ? "active" : ""}>Exposition en cours</button>
-                                    <button className={currentPage === 2 ? "active" : ""}>Exposition à venir</button>
+                                    <button className={currentPage === 1 ? "active" : ""} onClick={() => changePage(1)}>Exposition en cours</button>
+                                    <button className={currentPage === 2 ? "active" : ""} onClick={() => changePage(2)}>Exposition à venir</button>
                                     <button className={currentPage === 3 ? "active" : ""}>Exposition passées</button>
                                 </div>
                             </div>
