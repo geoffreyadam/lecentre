@@ -843,9 +843,16 @@ input::-webkit-inner-spin-button{
   font-size: 21px;
   font-family: SofiaProLight;
   margin: 10px 20px;
+  padding: 10px 15px;
+}
+.programmation_topBloc_nav .filters button:hover{
+  border: none;
+  color: #000;
+  background-color: #fff;
+  font-family: SofiaProBold;
+  cursor: pointer;
 }
 .programmation_topBloc_nav .filters .active{
-  background-color: transparent;
   border: none;
   color: #000;
   background-color: #fff;
