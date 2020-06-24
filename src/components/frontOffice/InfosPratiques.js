@@ -4,12 +4,35 @@ import fondInfos from '../../images/infosPratiques/fond_infos.png';
 import plan from '../../images/infosPratiques/plan.png';
 import fondNewsletters from '../../images/infosPratiques/fond_newsletters.png';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import axios from 'axios';
 
 export default class InfosPratiques extends Component{
     constructor(props) {
         super(props);
+        this.state = {
+            contact1: undefined,
+            contact2: undefined,
+            contact3: undefined,
+            contact4: undefined
+        }
     }
     
+
+    _sendContact(e){
+        const{contact1,contact2,contact3,contact4} = this.state;
+        e.preventDefault();
+        const data = {contact1, contact2, contact3, contact4};
+        axios
+        .post('https://radiant-falls-78689.herokuapp.com/api/addContact/4v8e61bfdqs4789fgf32e38vcxq2ezafbv7489d123fvdeza45b3vfdgvfdfdzafbbb', {
+            data
+        })
+        .then((response) =>{
+            console.log(response)
+        })
+        .catch((error) =>{
+            console.log(error)
+        })
+    }
     render(){
         return(
             <>
@@ -36,7 +59,7 @@ export default class InfosPratiques extends Component{
                                 <p className="light">Tarif réduit : 3€</p>
                                 <p className="light">Entrée gratuite tous les premiers dimanches du mois.</p>
                                 <div className="button">
-                                    <Link className="mainButton">Acheter un billet</Link>
+                                    <Link to="/billetterie" className="mainButton">Acheter un billet</Link>
                                 </div>
                             </div>
                         </div>
@@ -58,25 +81,25 @@ export default class InfosPratiques extends Component{
                     <section className="infosPratiques_bottomBloc">
                         <div className="left">
                             <h4>Contacts</h4>
-                            <form>
+                            <form onSubmit={(e) => this._sendContact(e)}>
                                 <div>
                                     <label for="Nom">Nom</label>
-                                    <input type="text" name="Nom" required/>
+                                    <input type="text" name="Nom" value={this.state.contact1} required onChange={(e) => this.setState({contact1: e.target.value})}/>
                                 </div>
                                 <div>
                                     <label for="Nom">Nom</label>
-                                    <input type="text" name="Nom" required/>
+                                    <input type="text" name="Nom" value={this.state.contact2} required onChange={(e) => this.setState({contact2: e.target.value})}/>
                                 </div>
                                 <div>
                                     <label for="Nom">Nom</label>
-                                    <input type="text" name="Nom" required/>
+                                    <input type="text" name="Nom" value={this.state.contact3} required onChange={(e) => this.setState({contact3: e.target.value})}/>
                                 </div>
                                 <div>
                                     <label for="Nom">Nom</label>
-                                    <input type="text" name="Nom" required/>
+                                    <input type="text" name="Nom" value={this.state.contact4} required onChange={(e) => this.setState({contact4: e.target.value})}/>
                                 </div>
                                 <div className="button">
-                                    <button className="mainButton">Acheter un billet</button>
+                                    <button type="submit" className="mainButton">Envoyer</button>
                                 </div>
                             </form>
                         </div>

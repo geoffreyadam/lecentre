@@ -410,14 +410,6 @@ p, span{
   background-size: cover;
   background-position: center;
 }
-/* .bottomBloc_2 div h1{
-  position: absolute;
-  top: calc(50% + 12.5px);
-  left: calc(50% + 12.5px);
-  padding: 25px;
-  width: calc(100% - 50px);
-  transform: translate(-50%, -50%);
-} */
 
 @media screen and (max-width: 860px) {
   .decouvrirCentre .bottomBloc_1{
@@ -495,7 +487,7 @@ p, span{
   margin: 30px 0;
 }
 .infosPratiques_middleBloc .right{
-  width: calc(70% - 150px);
+  width: 70%;
   background-color: #fff;
   padding: 75px;
 }
@@ -513,7 +505,7 @@ p, span{
 .infosPratiques_bottomBloc .left{
   background-color: #F7F7F7;
   padding: 75px;
-  width: calc(50% - 150px);
+  width: 50%;
 }
 .infosPratiques_bottomBloc form{
   display: flex;
@@ -543,7 +535,7 @@ p, span{
   outline: none;
 }
 .infosPratiques_bottomBloc .right{
-  width: calc(50% - 150px);
+  width: 50%;
   position: relative;
   text-align: left;
   background-position: center;
@@ -630,7 +622,7 @@ p, span{
 .billetterie_bottomBloc .left{
   padding: 75px;
   background-color: #F7F7F7;
-  width: calc(60% - 150px);
+  width: 60%;
   text-align: left;
 }
 .billetterie_bottomBloc .left h2{
@@ -984,6 +976,7 @@ input::-webkit-inner-spin-button{
 .singleConference{
   display: flex;
   flex-wrap: wrap;
+  min-height: 250px;
   height: 250px;
   overflow: hidden;
 }
@@ -1070,7 +1063,15 @@ input::-webkit-inner-spin-button{
 
 
 @media screen and (max-width: 860px) {
-
+  .singleConference{
+    height: inherit;
+  }
+  .singleConference .left{
+    width: 100%;
+  }
+  .singleConference .right{
+    width: 100%;
+  }
 }
 
 
