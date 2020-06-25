@@ -1338,12 +1338,14 @@ input::-webkit-inner-spin-button{
   position: absolute;
   left: -400px;
   top: -100px;
+  z-index: -1;
 }
 .decouvrir_secondBloc_bottomImg{
   width: 850px;
   position: absolute;
   right: -250px;
   bottom: -100px;
+  z-index: -1;
 }
 .decouvrir_thirdBloc{
   position: fixed;
@@ -1416,6 +1418,58 @@ input::-webkit-inner-spin-button{
   bottom: 170px;
   left: 50px;
   background-color: #fff;
+}
+
+
+.decouvrir_fifthBloc{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+.decouvrir_danse{
+  position: absolute;
+  width: 80%;
+  top: 100vh;
+  left: 0;
+}
+.decouvrir_fifthBloc h3{
+  position: absolute;
+  color:#fff;
+  font-size: 40px;
+  top: 250px;
+  right: 150px;
+}
+.decouvrir_fifthBloc2{
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  top: 310px;
+  right: 150px;
+  background-color: #fff;
+  padding: 3px 10px;
+}
+.decouvrir_fifthBloc3{
+  padding: 3px 10px;
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  top: 360px;
+  right: 150px;
+  background-color: #fff;
+}
+.decouvrir_fifthBloc_topImg{
+  position: absolute;
+  width: 850px;
+  right: -350px;
+  top: -200px;
+  z-index: -1;
+}
+.decouvrir_fifthBloc_bottomImg{
+  position: absolute;
+  width: 850px;
+  bottom: -200px;
+  right: -200px;
+  z-index: -1;
 }
 
 

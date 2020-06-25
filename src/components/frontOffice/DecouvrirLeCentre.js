@@ -4,6 +4,8 @@ import Light from '../../images/decouvrirCentre/light.jpg';
 import Underwater from '../../sons/underwater2.mp3';
 import bloc2top from '../../images/decouvrirCentre/illus/illu_14.gif';
 import bloc2bot from '../../images/decouvrirCentre/typos/le_centre.gif';
+import bloc5bot from '../../images/decouvrirCentre/illus/illu_17.gif';
+import bloc5top from '../../images/decouvrirCentre/typos/decouvrir.gif';
 import Neon from '../../images/decouvrirCentre/neon.jpg';
 import TableauMur from '../../images/decouvrirCentre/tableau_mur.jpg';
 import TableauSol from '../../images/decouvrirCentre/tableau_sol.png';
@@ -34,12 +36,12 @@ export default class DecouvrirLeCentre extends Component{
         let fourthSceneStart = thirdSceneStart + 300 + viewHeight + 500;
         let fifthSceneStart = fourthSceneStart + triggerOffset;
         let sixthSceneStart = fifthSceneStart + 300 + viewHeight + 500;
+        let seventhSceneStart = sixthSceneStart + triggerOffset;
+        let heightSceneStart = seventhSceneStart + 300 + viewHeight + 500;
+        let ninthSceneStart = heightSceneStart + triggerOffset;
+        let tenthSceneStart = ninthSceneStart + 300 + viewHeight + 500;
 
         var requestId = null;
-
-        gsap.set(".timeline-trigger", {
-            top: triggerOffset
-        });
      
         gsap.from(".decouvrir_topBloc", {
             opacity: 0,
@@ -72,6 +74,14 @@ export default class DecouvrirLeCentre extends Component{
         gsap.set(".decouvrir_fourthBloc", {
             autoAlpha: 0,
         })
+
+        gsap.set(".decouvrir_fifthBloc", {
+            autoAlpha: 0
+        })
+
+
+
+        /* End Set */
 
 
         
@@ -238,20 +248,90 @@ export default class DecouvrirLeCentre extends Component{
             duration: halfDuration
         }, sixthSceneStart + 300)
 
-        /* End sixt leave */
+        /* End sixth leave */
 
 
+        .to(".decouvrir_fifthBloc", {
+            autoAlpha: 1,
+            duration: duration
+        }, seventhSceneStart)
+        .to(".decouvrir_danse", {
+            autoAlpha: 1,
+            rotate: 10,
+            y: "-125%",
+            x: "-25%",
+            duration: duration
+        }, seventhSceneStart)
+
+        .set(".decouvrir_fifthBloc > h3", {
+            autoAlpha: 0,
+            x: -50,
+        }, seventhSceneStart)
+        .to(".decouvrir_fifthBloc > h3", {
+            autoAlpha: 1,
+            x: 0,
+            duration: 100
+        }, seventhSceneStart + 100)
+        .set(".decouvrir_fifthBloc2", {
+            autoAlpha: 0,
+            x: -50,
+        }, seventhSceneStart)
+        .to(".decouvrir_fifthBloc2", {
+            autoAlpha: 1,
+            x: 0,
+            duration: 100
+        }, seventhSceneStart + 200)
+        .set(".decouvrir_fifthBloc3", {
+            autoAlpha: 0,
+            x: -50,
+        }, seventhSceneStart)
+        .to(".decouvrir_fifthBloc3", {
+            autoAlpha: 1,
+            x: 0,
+            duration: 100
+        }, seventhSceneStart + 300)
 
 
+        /* Start heigth leave */
 
+        .to('.decouvrir_secondBloc',{
+            autoAlpha: 0,
+            duration: halfDuration
+        }, heightSceneStart)
+        .to(".decouvrir_fifthBloc_bottomImg, .decouvrir_fifthBloc_topImg", {
+            autoAlpha: 0,
+            duration: halfDuration
+        }, heightSceneStart)
+        .to(".decouvrir_danse", {
+            autoAlpha: 0,
+            y:"-250%",
+            x: "100%",
+            duration: halfDuration
+        }, heightSceneStart)
+        .to(".decouvrir_fifthBloc > h3", {
+            autoAlpha: 0,
+            x: -50,
+            duration: halfDuration
+        }, heightSceneStart + 100)
+        .to(".decouvrir_fifthBloc2", {
+            autoAlpha: 0,
+            x: -50,
+            duration: halfDuration
+        }, heightSceneStart + 200)
+        .to(".decouvrir_fifthBloc3", {
+            autoAlpha: 0,
+            x: -50,
+            duration: halfDuration
+        }, heightSceneStart + 300)
 
+        /* End height leave */
 
 
 
 
 
         window.addEventListener("scroll", function() {
-            document.getElementById("my_audio").volume = 0.1; 
+            document.getElementById("my_audio").volume = 0; 
             document.getElementById("my_audio").play();
             if (!requestId) {
                 requestId = requestAnimationFrame(update);
@@ -268,9 +348,6 @@ export default class DecouvrirLeCentre extends Component{
         return(
             <>
             <audio id="my_audio" src={Underwater} loop="loop"></audio>
-            <div class="marker timeline-trigger"></div>
-            <div class="marker start-trigger"></div>
-            <div class="marker end-trigger"></div>
                 <Header contrast="light"/>
                 <section className="decouvrirLecentre">
                     <section className="decouvrir_topBloc">
@@ -296,8 +373,13 @@ export default class DecouvrirLeCentre extends Component{
                         <p className="decouvrir_fourthBloc2">Vivamus neque dui, vulputate at</p>
                         <p className="decouvrir_fourthBloc3">risus a, tristique eleifend neque.</p>
                     </section>
-                    <section>
-
+                    <section className="decouvrir_fifthBloc">
+                        <img className="decouvrir_danse" src={Danse}/>
+                        <img className="decouvrir_fifthBloc_topImg" src={bloc5top}/>
+                        <img className="decouvrir_fifthBloc_bottomImg" src={bloc5bot}/>
+                        <h3 className="decouvrir_fifthBloc1">Un titre</h3>
+                        <p className="decouvrir_fifthBloc2">Vivamus neque dui, vulputate at</p>
+                        <p className="decouvrir_fifthBloc3">risus a, tristique eleifend neque.</p>
                     </section>
                 </section>
                 <section className="animHelper">
