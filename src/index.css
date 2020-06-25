@@ -1293,11 +1293,151 @@ input::-webkit-inner-spin-button{
   }
 }
 
+/* DECOUVRIR LE CENTRE */
+
+.decouvrirLecentre{
+  width: 100%;
+  overflow: hidden;
+}
+.decouvrir_topBloc{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.decouvrir_topBloc div{
+  z-index: 20;
+  width: 40%;
+}
+.decouvrir_topBloc div h2{
+  font-size: 80px;
+  opacity: 0.8;
+}
+.decouvrir_topBloc div h3{
+  font-size: 28px;
+  opacity: 0.8;
+}
+.decouvrir_topBloc img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.decouvrir_secondBloc{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+.decouvrir_secondBloc_topImg{
+  width: 850px;
+  position: absolute;
+  left: -400px;
+  top: -100px;
+}
+.decouvrir_secondBloc_bottomImg{
+  width: 850px;
+  position: absolute;
+  right: -250px;
+  bottom: -100px;
+}
+.decouvrir_thirdBloc{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+.decouvrir_thirdBloc img{
+  position: absolute;
+  width: 650px;
+  top: 150px;
+  right: 200px;
+}
+.decouvrir_thirdBloc h3{
+  position: absolute;
+  color:#fff;
+  font-size: 40px;
+  bottom: 250px;
+  left: 50px;
+}
+.decouvrir_thirdBloc2{
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  bottom: 220px;
+  left: 50px;
+  background-color: #fff;
+  padding: 3px 10px;
+}
+.decouvrir_thirdBloc3{
+  padding: 3px 10px;
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  bottom: 170px;
+  left: 50px;
+  background-color: #fff;
+}
+.decouvrir_fourthBloc{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+.decouvrir_fourthBloc img{
+  position: absolute;
+  width: 450px;
+  top: 150px;
+  left: 400px;
+}
+.decouvrir_fourthBloc h3{
+  position: absolute;
+  color:#fff;
+  font-size: 40px;
+  bottom: 250px;
+  left: 50px;
+}
+.decouvrir_fourthBloc2{
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  bottom: 220px;
+  left: 50px;
+  background-color: #fff;
+  padding: 3px 10px;
+}
+.decouvrir_fourthBloc3{
+  padding: 3px 10px;
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  bottom: 170px;
+  left: 50px;
+  background-color: #fff;
+}
 
 
 
-
-
+.animHelper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10000vh;
+}
+.animHelper *{
+  background-color: red;
+  opacity: 0.2;
+  border-bottom: 3px solid #fff;
+}
+.a100{
+  height: 100vh;
+}
+.a200{
+  height: 200vh;
+}
 
 
 
