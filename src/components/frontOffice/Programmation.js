@@ -3,6 +3,7 @@ import Header from './header/Header';
 import Venir from './programmation/Venir';
 import EnCours from './programmation/EnCours';
 import Passees from './programmation/Passees';
+import {ReactComponent as Scroll} from '../../images/icons/arrow.svg'
 import fondProgrammation from '../../images/programmation/header_programme.png';
 
 export default class Programmation extends Component{
@@ -37,6 +38,7 @@ export default class Programmation extends Component{
                                 </div>
                             </div>
                             <section className="topScroll">
+                                <Scroll/>
                                 <p className="light">Scroll</p>
                             </section>
                         </div>

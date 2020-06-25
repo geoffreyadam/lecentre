@@ -168,7 +168,7 @@ export default class EnCours extends Component{
 
     render(){
         return(
-            <>
+            <article className="programmation_animation">
                 <section className="programmation_secondBloc">
                     <img src={enCours1} className="firstImage"/>
                     <div>
@@ -191,7 +191,7 @@ export default class EnCours extends Component{
                     </div>
                     <img className="fifthBloc_img" src={enCours4}/>
                 </section>
-            </>
+            </article>
         )
     }
 }

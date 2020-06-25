@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
 import axios from 'axios';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import 'react-day-picker/lib/style.css';
+import moment from 'moment';
+import 'moment/locale/fr';
 import fondBilletterie from '../../images/billetterie/fond_billetterie.png';
 import fondRecap from '../../images/billetterie/fond_recap.png';
 import {ReactComponent as Visa} from '../../images/icons/visa.svg'
@@ -8,19 +12,17 @@ import {ReactComponent as Mastercard} from '../../images/icons/mastercard.svg'
 import {ReactComponent as Paypal} from '../../images/icons/paypal.svg'
 import {ReactComponent as Check} from '../../images/icons/check.svg'
 
+moment.locale('fr');
+
 export default class Billetterie extends Component{
     constructor(props) {
         super(props);
-        this.tarifs = [
-            {"tarif": "Plein", "infoTarif": "", "Montant": "5,00"},
-            {"tarif": "Réduit", "infoTarif": ["jeune 16-25 ans", "demandeur d'emploi", "famille nombreuse"], "Montant": "3,00"}
-        ]
         this.state = {
             currentPage: 1,
             finalPage: false,
-            pleinAdded: 0,
-            reduitAdded: 0,
-            infos: []
+            infos: [],
+            tarifs: [],
+            date: undefined
         }
     }
 
@@ -30,6 +32,16 @@ export default class Billetterie extends Component{
         .then(response => (
             this.setState({
                 infos: response.data
+            })
+        ))
+        .catch((error) => {
+          console.log(error)
+        })
+        axios
+        .get('https://radiant-falls-78689.herokuapp.com/api/tarifs/4v8e61bfdqs4789fgf32e38vcxq2ezafbv7489d123fvdeza45b3vfdgvfdfdzafbbb')
+        .then(response => (
+            this.setState({
+                tarifs: response.data
             })
         ))
         .catch((error) => {
@@ -52,15 +64,19 @@ export default class Billetterie extends Component{
     }
 
     _addTicket(e, tarif){
-        if(tarif.tarif === "Plein"){
-            this.setState({
-                pleinAdded: e.target.value
-            })
-        }else{
-            this.setState({
-                reduitAdded: e.target.value
-            })
-        }
+        const {allTarifs, tarifs} = this.state
+        let treated = false;
+        tarifs.forEach((currentTarif) => {
+            if(currentTarif.nom === tarif.nom){
+                let price = tarif.prix.replace(",", '.')
+                let totalPrice = price * e.target.value;
+                currentTarif["total"] = e.target.value
+                currentTarif["totalPrice"] = totalPrice
+                this.setState({
+                    tarifs: tarifs
+                })
+            }
+        })
     }
 
     _changePaiement(newPaiement){
@@ -69,7 +85,14 @@ export default class Billetterie extends Component{
         })
     }
     render(){
-        const {image, currentPage, pleinAdded, reduitAdded, paiement, infos} = this.state;
+        const {image, currentPage, paiement, infos, tarifs, date} = this.state;
+        let basketTotal = 0;
+        tarifs.forEach((singleTarif) =>{
+            if(singleTarif.totalPrice){
+                basketTotal += singleTarif.totalPrice
+
+            }
+        })
         return(
             <>
                 <Header contrast="dark"/>
@@ -114,12 +137,12 @@ export default class Billetterie extends Component{
                                             <p className="text_bold">Nombre de billets</p>
                                         </div>
                                         <div className="tarifsBody">
-                                            {this.tarifs.map((tarif, i) => {
+                                            {tarifs.map((tarif, i) => {
                                                 return (
                                                     <div className="singleTarif">
                                                         <p>
-                                                            <p>{tarif.tarif}</p>
-                                                            {tarif.infoTarif.length > 0 &&
+                                                            <p>{tarif.nom}</p>
+                                                            {/* {tarif.infoTarif.length > 0 &&
                                                                 <div className="infoTarif">
                                                                     {tarif.infoTarif.map((info, i) => {
                                                                         return(
@@ -127,9 +150,9 @@ export default class Billetterie extends Component{
                                                                         )
                                                                     })}
                                                                 </div>
-                                                            }
+                                                            } */}
                                                         </p>
-                                                        <p>{tarif.Montant}</p>
+                                                        <p>{tarif.prix}</p>
                                                         <select onChange={(e) => this._addTicket(e, tarif)}>
                                                             {[1,2,3,4,5,6,7,8,9,10,11].map((tarif, i) => {
                                                                 return(
@@ -143,7 +166,10 @@ export default class Billetterie extends Component{
                                         </div>
                                     </div>
                                     <div className="dates">
-                                            <p className="text_bold">Choississez la date qui vous convient parmi celles disponibles :</p>
+                                                <div className="datePicker">
+                                                    <p className="text_bold">Choississez la date qui vous convient parmi celles disponibles :</p>
+                                                    <DayPickerInput onDayChange={(day) => this.setState({date: moment(Date.parse(day)).format("LL")})} />
+                                                </div>
                                             <button className="mainButton" onClick={() => this._changePage()}>Acheter un billet</button>
                                     </div>
                                 </>
@@ -256,7 +282,9 @@ export default class Billetterie extends Component{
                         <section className="right">
                             <div className="right_1">
                                 <h3>Date de la visite</h3>
-                                <p className="text_bold">Mercredi 12 juillet 2020</p>
+                                {date &&
+                                    <p className="text_bold">{date}</p>
+                                }
                                 <br/>
                                 <p>Exposition : Digital Abysses</p>
                                 <p>Le Centre - Base sous-marine</p>
@@ -271,22 +299,20 @@ export default class Billetterie extends Component{
                             <div className="right_2" style={{backgroundImage: `url(${fondRecap})`}}>
                                 <h3 className="light">Récapitulatif</h3>
                                 <div className="recap">
-                                    {pleinAdded > 0 &&
-                                        <div className="singleRecap">
-                                            <p className="light">Digital Abysses - {pleinAdded} billet tarif Plein</p>
-                                            <p className="light">Prix: {pleinAdded * 5},00€</p>
-                                        </div>
-                                    }
-                                    {reduitAdded > 0 &&
-                                        <div className="singleRecap">
-                                            <p className="light">Digital Abysses - {reduitAdded} billet tarif Réduit</p>
-                                            <p className="light">Prix: {reduitAdded * 3},00€</p>
-                                        </div>
-                                    }
-                                    {pleinAdded + reduitAdded > 0 &&
+                                    {tarifs.map((tarif, i) => {
+                                        if(tarif.total > 0){
+                                            return(
+                                                <div className="singleRecap">
+                                                    <p className="light">Digital Abysses - {tarif.total} {tarif.total > 1 ? "billets" : "billet"} tarif {tarif.nom}</p>
+                                                    <p className="light">Prix: {tarif.totalPrice}€</p>
+                                                </div>
+                                            )
+                                        }
+                                    })}
+                                    {basketTotal > 0 &&
                                         <div className="total">
                                             <span className="text_bold light">Montant total:</span>
-                                            <span className="text_bold light">{(reduitAdded * 3) + (pleinAdded * 5)},00€</span>
+                                            <span className="text_bold light">{basketTotal}€</span>
                                         </div>
                                     }
                                 </div>

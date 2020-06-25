@@ -5,6 +5,7 @@ import fondDecouvrir from '../../images/home/fond_découvrir.png';
 import fondInfosPratiques from '../../images/home/fond_infos_pratiques.png';
 import fondProgrammation from '../../images/home/fond_programmation.png';
 import fondProjet from '../../images/home/fond_projet.png';
+import Logo from '../../images/logos/LOGO_LE_CENTRE-BLANC.png'
 import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from "react-router-dom";
 
 export default function HomePage(){
@@ -33,15 +34,6 @@ export default function HomePage(){
                                     <Link style={{backgroundImage: `url(${fondBilletterie})`}} className="home_first_bloc_2_inside_2 menu_open" to="/billetterie">
                                         <p>Billetterie</p>
                                     </Link>
-                                    {/* <div
-                                        className="home_first_bloc_2_inside_2 menu_open"
-                                        onClick={setOpenedPage}
-                                        // exit={{ y: "-100%", opacity: 0}}
-                                        // initial={{ y: "-100%", opacity: 0 }}
-                                        // animate={{ y: "0", opacity: 1 }}
-                                        // transition={{ ease: "easeOut", duration: 0.5, delay: 0.2 }}
-                                    >
-                                    </div> */}
                                 </div>
                             </div>
                             <section style={{backgroundImage: `url(${fondProgrammation})`}} className="home_second_bloc menu_open" onClick={setOpenedPage}>
@@ -55,7 +47,10 @@ export default function HomePage(){
                         </section>
                         <section className="homePage_bloc homePage_bloc_2 m_order_1" onClick={() => _changePage("decouvrirLeCentre")}>
                             <Link style={{backgroundImage: `url(${fondDecouvrir})`}} to="/decouvrir_le_centre" className="home_final_bloc menu_open">
-                                <p className="light">Découvrir le Centre</p>
+                                <div>
+                                    <img src={Logo}/>
+                                    <p className="light">Découvrir le Centre</p>
+                                </div>
                             </Link>
                         </section>
                     </div>

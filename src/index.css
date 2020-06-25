@@ -95,6 +95,9 @@ p, span{
 .text_bold{
   font-family: SofiaProBold;
 }
+.underline{
+  text-decoration: underline;
+}
 .hide_XL{
   display: block;
 }
@@ -239,6 +242,12 @@ p, span{
   justify-content: center;
   align-items: center;
 }
+.home_final_bloc p{
+  font-size: 33px;
+}
+.home_final_bloc img{
+  height: 150px;
+}
 .home_final_bloc > *{
   flex-basis: 100%;
   text-align: center;
@@ -280,7 +289,12 @@ p, span{
   align-items: center;
   width: 35px;
   fill: #fff;
+  transition: all ease 0.25s;
 }
+.header .burger:hover{
+  fill: #000;
+  cursor: pointer;
+}  
 .header .social_medias{
   display: flex;
   justify-content: center;
@@ -291,10 +305,152 @@ p, span{
 }
 .darkHeader .burger{
   fill: #000;
+  transition: all ease 0.25s;
 }
+.darkHeader .burger:hover{
+  fill: #fff;
+}  
 .darkHeader .social_medias *{
   fill: #000;
 }
+
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #242427;
+  z-index: 100;
+  opacity: 0.97;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: unset;
+}
+.menu .close{
+  position: fixed;
+  top: 37.5px;
+  left: 45px;
+  width: 35px;
+  fill: #fff;
+  transition: all ease 0.25s;
+}
+.menu .close:hover{
+  fill: #707070;
+  cursor: pointer;
+}
+.menu div{
+  display: grid;
+}
+.menu div a{
+  font-family: GothamBold;
+  font-size: 42px;
+  color: #fff;
+  margin: 10px 0;
+  transition: all ease 0.25s;
+}
+.menu div a:hover{
+  color: #707070;
+}
+@media screen and (max-width: 860px) {
+  .menu div a{
+    font-size: 26px;
+  }
+}
+
+
+/* FOOTER */
+
+.footer{
+  background-color: #F7F7F7;
+  min-height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 45px;
+}
+.footer div{
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.footer div a, .footer div p{
+  color:#000;
+  flex-basis: 100%;
+  text-align: left;
+  font-family: SofiaProMedium;
+  font-size: 14px;
+}
+.footer div h4{
+  font-size: 16px;
+}
+.footer img{
+  height: 40px;
+}
+.footer svg{
+  height: 35px;
+  width: 35px;
+}
+.footer .social_medias{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.footer .social_medias svg{
+  margin-right: 10px;
+}
+.footer form{
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer form div{
+  text-align: left;
+  flex-basis: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.footer form button{
+  margin-top: 3px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footer form div label{
+  color: #6E6E6E;
+  font-family: SofiaProLight;
+  font-size: 13px;
+}
+.footer form div input{
+  width: 100%;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+@media screen and (max-width: 860px) {
+  .footer{
+    background-color: transparent;
+    width: 100%;
+    padding: inherit;
+  }
+  .footer div{
+    background-color: #F7F7F7;
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 1px 0;
+    padding: 25px;
+  }
+  .footer form div{
+    width: 100%;
+  }
+  .footer a, .footer p{
+    text-align: center !important;
+    margin: 3px 0;
+  }
+}
+
 
 /* DECOUVRIR CENTRE */
 
@@ -681,6 +837,9 @@ p, span{
 .billetterie_bottomBloc .dates{
   margin-top: 25px;
 }
+.billetterie_bottomBloc .datePicker{
+  height: 300px;
+}
 .billetterie_bottomBloc h3{
   font-family: SofiaProBold;
 }
@@ -822,6 +981,9 @@ input::-webkit-inner-spin-button{
   width: 100%;
   overflow: hidden;
 }
+.programmation_animation{
+  height: 400vh;
+}
 .programmation_topBloc{
   position: relative;
   display: block;
@@ -887,6 +1049,11 @@ input::-webkit-inner-spin-button{
   bottom: 35px;
   width: 100%;
   text-align: center;
+}
+.programmation_topBloc .topScroll svg{
+  width: 35px;
+  height: 35px;
+  fill: #fff;
 }
 
 
@@ -962,6 +1129,17 @@ input::-webkit-inner-spin-button{
   top: 20%;
   position: absolute;
   right: 0;
+}
+
+@media screen and (max-width: 860px) {
+  .programmation_secondBloc div{
+    right: 5%;
+    padding-right: 0;
+  }
+  .programmation_fifthBloc img{
+    right: -50%;
+    opacity: 0.75 !important;
+  }
 }
 
 .programme_evenements h2{

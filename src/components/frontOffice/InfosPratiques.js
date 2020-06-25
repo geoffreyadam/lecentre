@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
+import Footer from './footer/Footer';
 import fondInfos from '../../images/infosPratiques/fond_infos.png';
 import plan from '../../images/infosPratiques/plan.png';
 import fondNewsletters from '../../images/infosPratiques/fond_newsletters.png';
@@ -15,7 +16,8 @@ export default class InfosPratiques extends Component{
             contact3: undefined,
             contact4: undefined,
             email: undefined,
-            infos: []
+            infos: [],
+            tarifs: []
         }
     }
     
@@ -25,6 +27,16 @@ export default class InfosPratiques extends Component{
         .then(response => (
             this.setState({
                 infos: response.data
+            })
+        ))
+        .catch((error) => {
+          console.log(error)
+        })
+        axios
+        .get('https://radiant-falls-78689.herokuapp.com/api/tarifs/4v8e61bfdqs4789fgf32e38vcxq2ezafbv7489d123fvdeza45b3vfdgvfdfdzafbbb')
+        .then(response => (
+            this.setState({
+                tarifs: response.data
             })
         ))
         .catch((error) => {
@@ -63,7 +75,7 @@ export default class InfosPratiques extends Component{
         })
     }
     render(){
-        const {infos} = this.state;
+        const {infos, tarifs} = this.state;
         return(
             <>
                 {infos.length > 0 &&
@@ -105,8 +117,18 @@ export default class InfosPratiques extends Component{
                                     </div>
                                     <div className="left_2">
                                         <h4 className="light">Tarifs & billetterie</h4>
-                                        <p className="light">Plein tarif : 5€</p>
-                                        <p className="light">Tarif réduit : 3€</p>
+                                        {tarifs &&
+                                        <>
+                                            {tarifs.map((tarif) =>{
+                                                return(
+                                                    <>
+                                                        <p className="light">Tarif {tarif.nom} : {tarif.prix}€</p>
+                                                    </>
+                                                )
+                                            })}
+                                        </>
+                                        }
+
                                         <p className="light">Entrée gratuite tous les premiers dimanches du mois.</p>
                                         <div className="button">
                                             <Link to="/billetterie" className="mainButton">Acheter un billet</Link>
@@ -171,6 +193,7 @@ export default class InfosPratiques extends Component{
                                 </div>
                             </section>
                         </section>
+                        <Footer/>
                     </>
                 }
             </>
