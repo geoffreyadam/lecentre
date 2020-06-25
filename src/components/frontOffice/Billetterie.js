@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
+import axios from 'axios';
 import fondBilletterie from '../../images/billetterie/fond_billetterie.png';
 import fondRecap from '../../images/billetterie/fond_recap.png';
 import {ReactComponent as Visa} from '../../images/icons/visa.svg'
@@ -18,8 +19,22 @@ export default class Billetterie extends Component{
             currentPage: 1,
             finalPage: false,
             pleinAdded: 0,
-            reduitAdded: 0
+            reduitAdded: 0,
+            infos: []
         }
+    }
+
+    componentDidMount(){
+        axios
+        .get('https://radiant-falls-78689.herokuapp.com/api/infos/4v8e61bfdqs4789fgf32e38vcxq2ezafbv7489d123fvdeza45b3vfdgvfdfdzafbbb')
+        .then(response => (
+            this.setState({
+                infos: response.data
+            })
+        ))
+        .catch((error) => {
+          console.log(error)
+        })
     }
 
     _changePage(){
@@ -54,7 +69,7 @@ export default class Billetterie extends Component{
         })
     }
     render(){
-        const {image, currentPage, pleinAdded, reduitAdded, paiement} = this.state;
+        const {image, currentPage, pleinAdded, reduitAdded, paiement, infos} = this.state;
         return(
             <>
                 <Header contrast="dark"/>
@@ -85,8 +100,12 @@ export default class Billetterie extends Component{
                                         <p>Billet d'entrée et réservation</p>
                                         <br/>
                                         <p className="text_bold">Horaires d'ouverture :</p>
-                                        <p>Ouvert du mardi au vendredi de 13h30 à 19h</p>
-                                        <p>Fermeture hebdomadaire le lundi et les jours fériés</p>
+                                        {infos.length > 0 &&
+                                            <>
+                                                <p>{infos[0]["horaires_ouvert"]}</p>
+                                                <p>{infos[0]["horaires_fermé"]}</p>
+                                            </>
+                                        }
                                     </div>
                                     <div className="tarifs">
                                         <div className="tarifsHead">
@@ -242,8 +261,12 @@ export default class Billetterie extends Component{
                                 <p>Exposition : Digital Abysses</p>
                                 <p>Le Centre - Base sous-marine</p>
                                 <br/>
-                                <p>Ouvert du mardi au vendredi de 13h30 à 19h</p>
-                                <p>Dernière entrée à 18h30</p>
+                                {infos.length > 0 &&
+                                    <>
+                                        <p>{infos[0]["horaires_ouvert"]}</p>
+                                        <p>{infos[0]["horaires_plus"]}</p>
+                                    </>
+                                }
                             </div>
                             <div className="right_2" style={{backgroundImage: `url(${fondRecap})`}}>
                                 <h3 className="light">Récapitulatif</h3>
