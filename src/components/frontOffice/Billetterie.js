@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
+import Footer from './footer/Footer';
 import axios from 'axios';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
@@ -142,17 +143,25 @@ export default class Billetterie extends Component{
                                                     <div className="singleTarif">
                                                         <p>
                                                             <p>{tarif.nom}</p>
-                                                            {/* {tarif.infoTarif.length > 0 &&
-                                                                <div className="infoTarif">
-                                                                    {tarif.infoTarif.map((info, i) => {
-                                                                        return(
-                                                                            <p>- {info}</p>
-                                                                        )
-                                                                    })}
-                                                                </div>
-                                                            } */}
+                                                            <div className="infoTarif">
+                                                                {tarif.info1 &&
+                                                                    <p>- {tarif.info1}</p>
+                                                                }
+                                                                {tarif.info2 &&
+                                                                    <p>- {tarif.info2}</p>
+                                                                }
+                                                                {tarif.info3 &&
+                                                                    <p>- {tarif.info3}</p>
+                                                                }
+                                                                {tarif.info4 &&
+                                                                    <p>- {tarif.info4}</p>
+                                                                }
+                                                                {tarif.info5 &&
+                                                                    <p>- {tarif.info5}</p>
+                                                                }
+                                                            </div>
                                                         </p>
-                                                        <p>{tarif.prix}</p>
+                                                        <p>{tarif.prix}€</p>
                                                         <select onChange={(e) => this._addTicket(e, tarif)}>
                                                             {[1,2,3,4,5,6,7,8,9,10,11].map((tarif, i) => {
                                                                 return(
@@ -179,42 +188,42 @@ export default class Billetterie extends Component{
                                     <form>
                                         <h4>Vos informations</h4>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <label for="Prenom">Prénom</label>
+                                            <input type="text" name="Prenom" required/>
                                         </div>
                                         <div>
                                             <label for="Nom">Nom</label>
                                             <input type="text" name="Nom" required/>
                                         </div>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <label for="Email">Adresse e-mail</label>
+                                            <input type="text" name="Email" required/>
                                         </div>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <label for="emailconfirm">Confirmer l'adresse e-mail</label>
+                                            <input type="text" name="emailconfirm" required/>
                                         </div>
                                     </form>
                                     <form>
                                         <h4>Adresse de facturation</h4>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <label for="Adresse">Adresse</label>
+                                            <input type="text" name="Adresse" required/>
                                         </div>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <label for="Postal">Code Postal</label>
+                                            <input type="text" name="Postal" required/>
                                         </div>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <label for="Ville">Ville</label>
+                                            <input type="text" name="Ville" required/>
                                         </div>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <label for="Pays">Pays</label>
+                                            <input type="text" name="Pays" required/>
                                         </div>
                                         <div className="button">
-                                            <button className="mainButton" onClick={() => this._changePage()}>Acheter un billet</button>
+                                            <button className="mainButton" onClick={() => this._changePage()}>Poursuivre l'achat</button>
                                         </div>
                                     </form>
                                 </>
@@ -238,29 +247,25 @@ export default class Billetterie extends Component{
                                     <form>
                                         <h4>Carte bancaire</h4>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <label for="dont">Numéro de carte bancaire</label>
+                                            <input type="text" name="dont" required/>
                                         </div>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <label for="dont">Titulaire de la carte</label>
+                                            <input type="text" name="dont" required/>
                                         </div>
                                         <div className="inputDate">
                                             <div>
-                                                <label for="Nom">Nom</label>
-                                                <input type="number" name="Nom" required/>
+                                                <label for="dont">Date d'expiration</label>
+                                                <input type="number" name="dont" required/>
                                             </div>
                                             <div>
-                                                <label for="Nom">Nom</label>
-                                                <input type="number" name="Nom" required/>
+                                                <label for="dont">CVV</label>
+                                                <input type="number" name="dont" required/>
                                             </div>
                                         </div>
-                                        <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
-                                        </div>
                                         <div className="button">
-                                            <button className="mainButton" onClick={() => this._changePage()}>Acheter un billet</button>
+                                            <button className="mainButton" onClick={() => this._changePage()}>Finaliser l'achat</button>
                                         </div>
                                     </form>
                                 </>
@@ -320,6 +325,7 @@ export default class Billetterie extends Component{
                         </section>
                     </section>
                 </section>
+                <Footer/>
             </>
         )
     }

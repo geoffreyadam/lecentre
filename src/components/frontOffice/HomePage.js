@@ -5,19 +5,31 @@ import fondDecouvrir from '../../images/home/fond_découvrir.png';
 import fondInfosPratiques from '../../images/home/fond_infos_pratiques.png';
 import fondProgrammation from '../../images/home/fond_programmation.png';
 import fondProjet from '../../images/home/fond_projet.png';
-import Logo from '../../images/logos/LOGO_LE_CENTRE-BLANC.png'
+import Logo from '../../images/logos/LOGO_LE_CENTRE-BLANC.png';
+import Video from '../../videos/digital-abysses.mp4';
+import {ReactComponent as Sound} from '../../images/icons/close.svg'
 import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from "react-router-dom";
 
 export default function HomePage(){
 
     const [openedPage, setOpenedPage] = useCycle(false, true);
     const [pageOpen, setPageOpen] = useState(undefined);
+    const [showVideo, setShowVideo] = useState(false);
 
     function _changePage(page){
         setOpenedPage()
         setPageOpen(page)
     }
-
+    function startVideo(){
+        setShowVideo(true)
+        document.getElementById("homePageVideo").play()
+        document.getElementsByTagName('video')[0].volume = 0.1;
+    }
+    function stopVideo(){
+        document.getElementById("homePageVideo").pause()
+        setShowVideo(false)
+    }
+    
     return(
         <>
                 {!openedPage &&
@@ -45,12 +57,19 @@ export default function HomePage(){
                                 </Link>
                             </section>
                         </section>
-                        <section className="homePage_bloc homePage_bloc_2 m_order_1" onClick={() => _changePage("decouvrirLeCentre")}>
+                        <section onMouseOver={() => startVideo()} onMouseLeave={() => stopVideo()} className="homePage_bloc homePage_bloc_2 m_order_1" onClick={() => _changePage("decouvrirLeCentre")}>
                             <Link style={{backgroundImage: `url(${fondDecouvrir})`}} to="/decouvrir_le_centre" className="home_final_bloc menu_open">
                                 <div>
                                     <img src={Logo}/>
                                     <p className="light">Découvrir le Centre</p>
+                                    <section>
+                                        <Sound/>
+                                        <p className="light">Mettez un casque pour une meilleure immersion</p>
+                                    </section>
                                 </div>
+                                    <video id="homePageVideo" autoplay loop className={showVideo ? "" : "hide"}>
+                                        <source src={Video} type="video/mp4"/>
+                                    </video>
                             </Link>
                         </section>
                     </div>

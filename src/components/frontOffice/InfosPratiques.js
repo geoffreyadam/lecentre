@@ -159,16 +159,16 @@ export default class InfosPratiques extends Component{
                                             <input type="text" name="Nom" value={this.state.contact1} required onChange={(e) => this.setState({contact1: e.target.value})}/>
                                         </div>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" value={this.state.contact2} required onChange={(e) => this.setState({contact2: e.target.value})}/>
+                                            <label for="Email">Adresse e-mail</label>
+                                            <input type="text" name="Email" value={this.state.contact2} required onChange={(e) => this.setState({contact2: e.target.value})}/>
                                         </div>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" value={this.state.contact3} required onChange={(e) => this.setState({contact3: e.target.value})}/>
+                                            <label for="Sujet">Sujet</label>
+                                            <input type="text" name="Sujet" value={this.state.contact3} required onChange={(e) => this.setState({contact3: e.target.value})}/>
                                         </div>
                                         <div>
-                                            <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" value={this.state.contact4} required onChange={(e) => this.setState({contact4: e.target.value})}/>
+                                            <label for="Message">Message</label>
+                                            <textarea type="text" name="Message" value={this.state.contact4} required onChange={(e) => this.setState({contact4: e.target.value})}/>
                                         </div>
                                         <div className="button">
                                             <button type="submit" className="mainButton">Envoyer</button>
@@ -180,9 +180,9 @@ export default class InfosPratiques extends Component{
                                     <p className="light">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam, sed diam voluptua. At vero eos et accusam.</p>
                                     <form onSubmit={(e) => this._sendNewsletter(e)}>
                                         <div>
-                                            <label for="Nom">Nom</label>
+                                            <label for="Email">Adresse e-mail</label>
                                             <div>
-                                                <input type="text" name="Nom" value={this.state.email} required onChange={(e) => this.setState({email: e.target.value})}/>
+                                                <input type="text" name="Email" value={this.state.email} required onChange={(e) => this.setState({email: e.target.value})}/>
                                                 <button className="mainButton">Envoyer</button>
                                             </div>
                                         </div>

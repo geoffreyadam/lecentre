@@ -32,9 +32,9 @@ export default class Programmation extends Component{
                             <div>
                                 <h1 className="light">Programme</h1>
                                 <div className="filters">
-                                    <button className={currentPage === 1 ? "active" : ""} onClick={() => this._changePage(1)}>Exposition en cours</button>
-                                    <button className={currentPage === 2 ? "active" : ""} onClick={() => this._changePage(2)}>Exposition à venir</button>
-                                    <button className={currentPage === 3 ? "active" : ""} onClick={() => this._changePage(3)}>Exposition passées</button>
+                                    <button className={currentPage === 1 ? "active" : ""} onClick={() => this._changePage(1)}>Expositions en cours</button>
+                                    <button className={currentPage === 2 ? "active" : ""} onClick={() => this._changePage(2)}>Expositions à venir</button>
+                                    <button className={currentPage === 3 ? "active" : ""} onClick={() => this._changePage(3)}>Expositions passées</button>
                                 </div>
                             </div>
                             <section className="topScroll">

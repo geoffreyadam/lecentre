@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
+import Footer from './footer/Footer';
 import fondBase from '../../images/base3en1/fond_base.png';
 import fondBassins from '../../images/base3en1/fond_bassins.png';
 import fondCentre from '../../images/base3en1/fond_centre.png';
@@ -123,6 +124,7 @@ export default class Base3en1 extends Component{
                         </section>
                     </section>
                 </section>
+                <Footer />
             </>
         )
     }

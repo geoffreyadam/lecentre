@@ -7,16 +7,16 @@
   src: local('GothamBook'), url(./fonts/GothamBook.ttf);
 }
 @font-face {
-  font-family: 'SofiaProBold';
-  src: local('SofiaProBold'), url(./fonts/SofiaProBold.otf);
+  font-family: 'SFProBold';
+  src: local('SFProBold'), url(./fonts/sfProBold.otf);
 }
 @font-face {
-  font-family: 'SofiaProMedium';
-  src: local('SofiaProMedium'), url(./fonts/SofiaProMedium.otf);
+  font-family: 'SFProMedium';
+  src: local('SFProMedium'), url(./fonts/SF-Pro-Display-Medium.otf);
 }
 @font-face {
-  font-family: 'SofiaProLight';
-  src: local('SofiaProLight'), url(./fonts/SofiaProLight.otf);
+  font-family: 'SFProLight';
+  src: local('SFProLight'), url(./fonts/SF-Pro-Display-Thin.otf);
 }
 body {
   margin: 0;
@@ -50,7 +50,7 @@ button{
   color: #fff;
   font-size: 16px;
   padding: 10px 25px;
-  font-family: SofiaProLight;
+  font-family: SFProLight;
   transition: all ease 0.25s;
   border: none;
 }
@@ -63,7 +63,7 @@ button{
   color: #fff;
   font-size: 16px;
   padding: 2px 5px;
-  font-family: SofiaProLight;
+  font-family: SFProLight;
   transition: all ease 0.25s;
   border: none;
   height: max-content;
@@ -90,13 +90,16 @@ h4{
   text-align: left;
 }
 p, span{
-  font-family: SofiaProLight;
+  font-family: SFProLight;
 }
 .text_bold{
-  font-family: SofiaProBold;
+  font-family: SFProBold;
 }
 .underline{
   text-decoration: underline;
+}
+.hide{
+  display: none;
 }
 .hide_XL{
   display: block;
@@ -185,6 +188,39 @@ p, span{
   width: 55%;
   background-color: #B2B2B2;
   display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.homePage_bloc_2 a{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.homePage_bloc_2 div{
+  z-index: 20;
+}
+.homePage_bloc_2 video{
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  top: 0;
+}
+.homePage_bloc_2 section{
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.homePage_bloc_2 section svg{
+  height: 20px;
+  width: 20px;
+  fill:#fff;
+}
+.homePage_bloc_2 section p{
+  font-size: 18px;
+  flex-basis: 100%;
+  font-family: SFProLight !important;
 }
 .home_first_bloc{
   display: flex;
@@ -380,11 +416,12 @@ p, span{
   color:#000;
   flex-basis: 100%;
   text-align: left;
-  font-family: SofiaProMedium;
+  font-family: SFProMedium;
   font-size: 14px;
 }
 .footer div h4{
   font-size: 16px;
+  flex-basis: 100%;
 }
 .footer img{
   height: 40px;
@@ -420,7 +457,7 @@ p, span{
 }
 .footer form div label{
   color: #6E6E6E;
-  font-family: SofiaProLight;
+  font-family: SFProLight;
   font-size: 13px;
 }
 .footer form div input{
@@ -524,18 +561,18 @@ p, span{
   margin-bottom: 20px;
 }
 .bottomBloc_1 div p{
-  font-family: SofiaProLight;
+  font-family: SFProLight;
   font-size: 15px;
 
 }
 .bottomBloc_1 div b{
-  font-family: SofiaProBold;
+  font-family: SFProBold;
 }
 .bottomBloc_1 h2{
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 34px;
-  font-family: SofiaProBold;
+  font-family: SFProBold;
 }
 .bottomBloc_1 p{
   margin-bottom: 50px;
@@ -608,19 +645,18 @@ p, span{
   object-fit: cover;
 }
 .infosPratiques_topBloc_nav h1{
-  background-color: #fff;
   font-size: 42px;
   padding: 5px 15px;
 }
 .infosPratiques_middleBloc{
   display: flex;
   flex-wrap: wrap;
-  font-family: SofiaProLight;
+  font-family: SFProLight;
   text-align: left;
   background-color: #101010;
 }
 .infosPratiques_middleBloc b{
-  font-family: SofiaProBold;
+  font-family: SFProBold;
 }
 .infosPratiques_middleBloc .left{
   width: 30%;
@@ -681,10 +717,10 @@ p, span{
 }
 .infosPratiques_bottomBloc form div label{
   color: #707070;
-  font-family: SofiaProMedium;
+  font-family: SFProMedium;
   font-size: 14px;
 }
-.infosPratiques_bottomBloc form div input{
+.infosPratiques_bottomBloc form div input, .infosPratiques_bottomBloc form div textarea{
   width: 100%;
   border: 1px solid #707070;
   padding: 10px;
@@ -765,7 +801,6 @@ p, span{
   object-fit: cover;
 }
 .billetterie_topBloc_nav h1{
-  background-color: #fff;
   font-size: 42px;
   padding: 5px 35px;
   min-width: 250px;
@@ -773,7 +808,7 @@ p, span{
 .billetterie_bottomBloc{
   display: flex;
   flex-wrap: wrap;
-  font-family: SofiaProLight;
+  font-family: SFProLight;
 }
 .billetterie_bottomBloc .left{
   padding: 75px;
@@ -784,7 +819,7 @@ p, span{
 .billetterie_bottomBloc .left h2{
   font-size: 32px;
   margin-bottom: 10px;
-  font-family: SofiaProBold;
+  font-family: SFProBold;
 }
 .billetterie_bottomBloc .recapInfos{
   margin-top: 25px;
@@ -823,15 +858,15 @@ p, span{
 .billetterie_bottomBloc .singleTarif select{
   border: 1px solid #707070;
   border-radius: 0;
-  font-family: SofiaProLight;
+  font-family: SFProLight;
   height: 26px;
   min-width: 75px;
 }
 .billetterie_bottomBloc .singleTarif option{
-  font-family: SofiaProLight;
+  font-family: SFProLight;
 }
 .billetterie_bottomBloc .infoTarif p{
-  font-family: SofiaProLight;
+  font-family: SFProLight;
   font-size: 14px;
 }
 .billetterie_bottomBloc .dates{
@@ -841,10 +876,10 @@ p, span{
   height: 300px;
 }
 .billetterie_bottomBloc h3{
-  font-family: SofiaProBold;
+  font-family: SFProBold;
 }
 .billetterie_bottomBloc .active{
-  font-family: SofiaProBold;
+  font-family: SFProBold;
 }
 .billetterie_bottomBloc .right{
   background-color: #fff;
@@ -897,7 +932,7 @@ p, span{
 }
 .billetterie_bottomBloc form div label{
   color: #707070;
-  font-family: SofiaProMedium;
+  font-family: SFProMedium;
   font-size: 14px;
 }
 .billetterie_bottomBloc form div input{
@@ -933,7 +968,7 @@ input::-webkit-inner-spin-button{
   margin: 0;
 }
 .billetterie_bottomBloc form .inputDate div{
-  flex-basis: 75px;
+  flex-basis: 125px;
   margin-right: 10px;
 }
 .billetterie_bottomBloc .valide{
@@ -960,6 +995,10 @@ input::-webkit-inner-spin-button{
   justify-content: center;
   margin-top: 25px;
   align-items: center;
+}
+.billetterie_bottomBloc .valide h3{
+  flex-basis: 100%;
+  text-align: center;
 }
 .billetterie_bottomBloc .valide .pdf button{
   margin: 25px 0;
@@ -1015,7 +1054,7 @@ input::-webkit-inner-spin-button{
   border: none;
   color: #fff;
   font-size: 21px;
-  font-family: SofiaProLight;
+  font-family: SFProLight;
   margin: 10px 20px;
   padding: 10px 15px;
 }
@@ -1023,14 +1062,14 @@ input::-webkit-inner-spin-button{
   border: none;
   color: #000;
   background-color: #fff;
-  font-family: SofiaProBold;
+  font-family: SFProBold;
   cursor: pointer;
 }
 .programmation_topBloc_nav .filters .active{
   border: none;
   color: #000;
   background-color: #fff;
-  font-family: SofiaProBold;
+  font-family: SFProBold;
 }
 .programmation_topBloc_nav img{
   height: 100%;
@@ -1075,7 +1114,7 @@ input::-webkit-inner-spin-button{
   padding: 25px;
   z-index: 50;
   text-align: left;
-  max-width:300px;
+  max-width: 400px;
   padding-right: 50px;
 }
 .programmation_secondBloc h2{
@@ -1113,6 +1152,7 @@ input::-webkit-inner-spin-button{
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  max-width: 350px;
   width: 50%;
   left: 10%;
   top: 30%;
@@ -1169,6 +1209,7 @@ input::-webkit-inner-spin-button{
 }
 .singleConference .left{
   width: 40%;
+  height: 100%;
   display: flex;
   position: relative;
 }
