@@ -37,15 +37,35 @@ export default class Venir extends Component{
             <>
             <section className="programme_evenements">
                 <div>
+                    <h2 className="light">Autour de l'exposition</h2>
                     {evenements.length > 0 &&
                         <>
                             {evenements.map((evenement, i) => {
-                                return(
-                                    evenement.type === "Exposition" ?
-                                    <Exposition data={evenement}/>
-                                    :
-                                    <Conference data={evenement}/>
-                                )
+                                if(evenement.type != "Exposition"){
+                                    return(
+                                        evenement.type === "Exposition" ?
+                                        <Exposition data={evenement}/>
+                                        :
+                                        <Conference data={evenement}/>
+                                    ) 
+                                }
+                            })}
+                        </>
+                    }
+                </div>
+                <div>
+                    <h2 className="light">Expositions à venir</h2>
+                    {evenements.length > 0 &&
+                        <>
+                            {evenements.map((evenement, i) => {
+                                if(evenement.type === "Exposition"){
+                                    return(
+                                        evenement.type === "Exposition" ?
+                                        <Exposition data={evenement}/>
+                                        :
+                                        <Conference data={evenement}/>
+                                    ) 
+                                }
                             })}
                         </>
                     }

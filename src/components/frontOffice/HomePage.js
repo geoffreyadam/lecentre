@@ -7,7 +7,7 @@ import fondProgrammation from '../../images/home/fond_programmation.png';
 import fondProjet from '../../images/home/fond_projet.png';
 import Logo from '../../images/logos/LOGO_LE_CENTRE-BLANC.png';
 import Video from '../../videos/digital-abysses.mp4';
-import {ReactComponent as Sound} from '../../images/icons/close.svg'
+import {ReactComponent as Sound} from '../../images/icons/casque.svg'
 import {BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from "react-router-dom";
 
 export default function HomePage(){

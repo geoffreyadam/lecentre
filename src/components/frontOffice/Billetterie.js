@@ -23,7 +23,14 @@ export default class Billetterie extends Component{
             finalPage: false,
             infos: [],
             tarifs: [],
-            date: undefined
+            date: undefined,
+            prenom: undefined,
+            nom: undefined,
+            email: undefined,
+            adresse: undefined,
+            codePostal: undefined,
+            ville: undefined,
+            pays: undefined
         }
     }
 
@@ -85,8 +92,44 @@ export default class Billetterie extends Component{
             paiement: newPaiement
         })
     }
+
+    _sendReservations(e){
+        const{tarifs, email, date, prenom, nom, adresse, postal, ville, pays} = this.state;
+        let totalBillets = 0;
+        let totalPrice = 0;
+        tarifs.forEach((tarif) =>{
+            totalBillets += parseInt(tarif.total)
+            totalPrice += tarif.totalPrice
+        })
+        e.preventDefault();
+        const data = {
+            "totalBillets": totalBillets,
+            "totalPrice": totalPrice,
+            "date": date,
+            "prenom": prenom,
+            "nom": nom,
+            "email": email,
+            "adresse": adresse,
+            "postal": postal,
+            "ville": ville,
+            "pays": pays
+        } 
+
+        console.log(data)
+        axios
+        .post('https://radiant-falls-78689.herokuapp.com/api/addreservations/4v8e61bfdqs4789fgf32e38vcxq2ezafbv7489d123fvdeza45b3vfdgvfdfdzafbbb', {
+            data
+        })
+        .then((response) =>{
+            console.log(response)
+        })
+        .catch((error) =>{
+            console.log(error)
+        })
+    }
+
     render(){
-        const {image, currentPage, paiement, infos, tarifs, date} = this.state;
+        const {image, currentPage, paiement, infos, tarifs, date, prenom, nom, email, adresse, postal, ville, pays} = this.state;
         let basketTotal = 0;
         tarifs.forEach((singleTarif) =>{
             if(singleTarif.totalPrice){
@@ -189,15 +232,15 @@ export default class Billetterie extends Component{
                                         <h4>Vos informations</h4>
                                         <div>
                                             <label for="Prenom">Prénom</label>
-                                            <input type="text" name="Prenom" required/>
+                                            <input type="text" name="Prenom" value={prenom} onChange={(e) => this.setState({ prenom: e.target.value})} required/>
                                         </div>
                                         <div>
                                             <label for="Nom">Nom</label>
-                                            <input type="text" name="Nom" required/>
+                                            <input type="text" name="Nom" value={nom} onChange={(e) => this.setState({ nom: e.target.value})} required/>
                                         </div>
                                         <div>
                                             <label for="Email">Adresse e-mail</label>
-                                            <input type="text" name="Email" required/>
+                                            <input type="text" name="Email" value={email} onChange={(e) => this.setState({email : e.target.value})} required/>
                                         </div>
                                         <div>
                                             <label for="emailconfirm">Confirmer l'adresse e-mail</label>
@@ -208,19 +251,19 @@ export default class Billetterie extends Component{
                                         <h4>Adresse de facturation</h4>
                                         <div>
                                             <label for="Adresse">Adresse</label>
-                                            <input type="text" name="Adresse" required/>
+                                            <input type="text" name="Adresse" value={adresse} onChange={(e) => this.setState({adresse : e.target.value})} required/>
                                         </div>
                                         <div>
                                             <label for="Postal">Code Postal</label>
-                                            <input type="text" name="Postal" required/>
+                                            <input type="text" name="Postal" value={postal} onChange={(e) => this.setState({ postal: e.target.value})} required/>
                                         </div>
                                         <div>
                                             <label for="Ville">Ville</label>
-                                            <input type="text" name="Ville" required/>
+                                            <input type="text" name="Ville" value={ville} onChange={(e) => this.setState({ ville: e.target.value})} required/>
                                         </div>
                                         <div>
                                             <label for="Pays">Pays</label>
-                                            <input type="text" name="Pays" required/>
+                                            <input type="text" name="Pays" value={pays} onChange={(e) => this.setState({ pays: e.target.value})} required/>
                                         </div>
                                         <div className="button">
                                             <button className="mainButton" onClick={() => this._changePage()}>Poursuivre l'achat</button>
@@ -265,7 +308,7 @@ export default class Billetterie extends Component{
                                             </div>
                                         </div>
                                         <div className="button">
-                                            <button className="mainButton" onClick={() => this._changePage()}>Finaliser l'achat</button>
+                                            <button className="mainButton" onClick={() => this._changePage(), (e) => this._sendReservations(e)}>Finaliser l'achat</button>
                                         </div>
                                     </form>
                                 </>

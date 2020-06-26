@@ -32,6 +32,18 @@ export default class Venir extends Component{
                     {data.titre === "Kodachrome, Harry Gruyaert" &&
                         <img src={image7}/>
                     }
+                    {data.titre === "Rivages, Harry Gruyaert" &&
+                        <img src={image6}/>
+                    }
+                    {data.titre === "Légendes Urbaines" &&
+                        <img src={image8}/>
+                    }
+                    {data.titre === "Africa 2020" &&
+                        <img src={image3}/>
+                    }
+                    {data.titre === "Bienvenue Bordeaux 2021" &&
+                        <img src={image4}/>
+                    }
                 </section>
                 <section className="right">
                     <div>

@@ -37,7 +37,6 @@ export default class Passees extends Component{
             <>
             <section className="programme_evenements">
                 <div>
-                    <h2 className="light">Autour de l'exposition</h2>
                     {evenements.length > 0 &&
                         <>
                             {evenements.map((evenement, i) => {

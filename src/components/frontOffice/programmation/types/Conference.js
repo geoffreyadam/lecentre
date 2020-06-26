@@ -20,7 +20,7 @@ export default class Venir extends Component{
         return(
             <article className="singleConference">
                 <section className="left">
-                    {data.fini === "Terminé"&&
+                    {data.fini === "Terminé" &&
                         <div className="ended"></div>
                     }
                     {data.titre === "La pérennité du virtuel, Miguel Chevalier" &&
@@ -32,7 +32,18 @@ export default class Venir extends Component{
                     {data.titre === "Kodachrome, Harry Gruyaert" &&
                         <img src={image7}/>
                     }
-                    
+                    {data.titre === "Rivages, Harry Gruyaert" &&
+                        <img src={image6}/>
+                    }
+                    {data.titre === "Légendes Urbaines" &&
+                        <img src={image8}/>
+                    }
+                    {data.titre === "Africa 2020" &&
+                        <img src={image3}/>
+                    }
+                    {data.titre === "Bienvenue Bordeaux 2021" &&
+                        <img src={image4}/>
+                    }
                     <div className="left_right">
                         <div className="left_right_1" style={{backgroundImage: `url(${background})`}}>
                             <p className="light text_bold">{data.date}</p>

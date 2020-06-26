@@ -453,7 +453,7 @@ export default class DecouvrirLeCentre extends Component{
         }, ninthSceneStart + 300)
 
         window.addEventListener("scroll", function() {
-            document.getElementById("my_audio").volume = 0; 
+            document.getElementById("my_audio").volume = 0.1; 
             document.getElementById("my_audio").play();
             if (!requestId) {
                 requestId = requestAnimationFrame(update);
