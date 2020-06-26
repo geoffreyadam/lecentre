@@ -1297,6 +1297,7 @@ input::-webkit-inner-spin-button{
 
 .decouvrirLecentre{
   width: 100%;
+  height: 1000vh;
   overflow: hidden;
 }
 .decouvrir_topBloc{
@@ -1471,6 +1472,129 @@ input::-webkit-inner-spin-button{
   right: -200px;
   z-index: -1;
 }
+
+.decouvrir_sixthBloc{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+.decouvrir_sixthBloc_img{
+  position: absolute;
+  width:350px;
+  top: 30%;
+  left: calc(50% - 175px);
+}
+.decouvrir_sixthBloc h3{
+  position: absolute;
+  color:#fff;
+  font-size: 40px;
+  top: 150px;
+  right: 150px;
+}
+.decouvrir_sixthBloc2{
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  bottom: 210px;
+  left: 350px;
+  background-color: #fff;
+  padding: 3px 10px;
+}
+.decouvrir_sixthBloc3{
+  padding: 3px 10px;
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  bottom: 160px;
+  left: 450px;
+  background-color: #fff;
+}
+.decouvrir_sixthBloc_topImg{
+  position: absolute;
+  width: 850px;
+  left: -150px;
+  top: -100px;
+  z-index: -1;
+}
+.decouvrir_sixthBloc_bottomImg{
+  position: absolute;
+  width: 1200px;
+  bottom: -200px;
+  right: -250px;
+  z-index: -1;
+}
+
+
+.decouvrir_seventhBloc{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+}
+.decouvrir_seventhBloc a{
+  position: absolute;
+  left: calc(50% - 125px);
+  width: 250px;
+  bottom: 150px;
+  transition: all ease 0.25s;
+}
+.decouvrir_seventhBloc a:hover{
+  background-color: #fff;
+  color:#0000CA;
+  cursor: pointer;
+}
+.decouvrir_seventhBloc_img{
+  position: absolute;
+  width:60%;
+  top: -100px;
+  left: calc(50% - 30%);
+}
+.decouvrir_seventhBloc h3{
+  position: absolute;
+  color:#fff;
+  font-size: 40px;
+  top: 150px;
+  right: 150px;
+}
+.decouvrir_seventhBloc2{
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  bottom: 210px;
+  left: 350px;
+  background-color: #fff;
+  padding: 3px 10px;
+}
+.decouvrir_seventhBloc3{
+  padding: 3px 10px;
+  position: absolute;
+  color:#000;
+  font-size: 28px;
+  bottom: 160px;
+  left: 450px;
+  background-color: #fff;
+}
+.decouvrir_seventhBloc_topImg{
+  position: absolute;
+  width: 850px;
+  right: -150px;
+  top: -100px;
+  z-index: -1;
+}
+.decouvrir_seventhBloc_bottomImg{
+  position: absolute;
+  width: 1200px;
+  bottom: -350px;
+  left: -850px;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
 
 
 

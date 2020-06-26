@@ -6,6 +6,10 @@ import bloc2top from '../../images/decouvrirCentre/illus/illu_14.gif';
 import bloc2bot from '../../images/decouvrirCentre/typos/le_centre.gif';
 import bloc5bot from '../../images/decouvrirCentre/illus/illu_17.gif';
 import bloc5top from '../../images/decouvrirCentre/typos/decouvrir.gif';
+import bloc6bot from '../../images/decouvrirCentre/illus/illu_2.gif';
+import bloc6top from '../../images/decouvrirCentre/typos/decouvrir_centre.gif';
+import bloc7bot from '../../images/decouvrirCentre/illus/illu_2.gif';
+import bloc7top from '../../images/decouvrirCentre/illus/illu_14.gif';
 import Neon from '../../images/decouvrirCentre/neon.jpg';
 import TableauMur from '../../images/decouvrirCentre/tableau_mur.jpg';
 import TableauSol from '../../images/decouvrirCentre/tableau_sol.png';
@@ -38,7 +42,7 @@ export default class DecouvrirLeCentre extends Component{
         let sixthSceneStart = fifthSceneStart + 300 + viewHeight + 500;
         let seventhSceneStart = sixthSceneStart + triggerOffset;
         let heightSceneStart = seventhSceneStart + 300 + viewHeight + 500;
-        let ninthSceneStart = heightSceneStart + triggerOffset;
+        let ninthSceneStart = heightSceneStart + 350;
         let tenthSceneStart = ninthSceneStart + 300 + viewHeight + 500;
 
         var requestId = null;
@@ -79,7 +83,16 @@ export default class DecouvrirLeCentre extends Component{
             autoAlpha: 0
         })
 
+        gsap.set(".decouvrir_sixthBloc", {
+            autoAlpha: 0
+        })
+        gsap.set(".decouvrir_sixthBloc_img",{
+            rotate: -15
+        })
 
+        gsap.set(".decouvrir_seventhBloc", {
+            autoAlpha: 0
+        })
 
         /* End Set */
 
@@ -327,8 +340,117 @@ export default class DecouvrirLeCentre extends Component{
         /* End height leave */
 
 
+        .to(".decouvrir_sixthBloc", {
+            autoAlpha: 1,
+            duration: duration
+        }, seventhSceneStart)
+        .to(".decouvrir_sixthBloc_img", {
+            autoAlpha: 1,
+            rotate: 0,
+            scale: 3,
+            duration: duration
+        }, seventhSceneStart)
+
+        .set(".decouvrir_sixthBloc > h3", {
+            autoAlpha: 0,
+            x: -50,
+        }, seventhSceneStart)
+        .to(".decouvrir_sixthBloc > h3", {
+            autoAlpha: 1,
+            x: 0,
+            duration: 100
+        }, seventhSceneStart + 100)
+        .set(".decouvrir_sixthBloc2", {
+            autoAlpha: 0,
+            x: -50,
+        }, seventhSceneStart)
+        .to(".decouvrir_sixthBloc2", {
+            autoAlpha: 1,
+            x: 0,
+            duration: 100
+        }, seventhSceneStart + 200)
+        .set(".decouvrir_sixthBloc3", {
+            autoAlpha: 0,
+            x: -50,
+        }, seventhSceneStart)
+        .to(".decouvrir_sixthBloc3", {
+            autoAlpha: 1,
+            x: 0,
+            duration: 100
+        }, seventhSceneStart + 300)
 
 
+        /* Start tenth leave */
+
+        .to('.decouvrir_secondBloc',{
+            autoAlpha: 0,
+            duration: halfDuration
+        }, heightSceneStart)
+        .to(".decouvrir_sixthBloc_bottomImg, .decouvrir_sixthBloc_topImg", {
+            autoAlpha: 0,
+            duration: halfDuration
+        }, heightSceneStart)
+        .to(".decouvrir_sixthBloc_img", {
+            autoAlpha: 0,
+            y:"-100%",
+            rotate: 15,
+            x: "100%",
+            duration: halfDuration
+        }, heightSceneStart)
+        .to(".decouvrir_sixthBloc > h3", {
+            autoAlpha: 0,
+            x: -50,
+            duration: halfDuration
+        }, heightSceneStart + 100)
+        .to(".decouvrir_sixthBloc2", {
+            autoAlpha: 0,
+            x: -50,
+            duration: halfDuration
+        }, heightSceneStart + 200)
+        .to(".decouvrir_sixthBloc3", {
+            autoAlpha: 0,
+            x: -50,
+            duration: halfDuration
+        }, heightSceneStart + 300)
+
+        /* End tenth leave */
+
+        .to(".decouvrir_seventhBloc", {
+            autoAlpha: 1,
+            duration: duration
+        }, ninthSceneStart)
+        .to(".decouvrir_seventhBloc_img", {
+            autoAlpha: 1,
+            duration: duration
+        }, ninthSceneStart)
+
+        .set(".decouvrir_seventhBloc > h3", {
+            autoAlpha: 0,
+            x: -50,
+        }, ninthSceneStart)
+        .to(".decouvrir_seventhBloc > h3", {
+            autoAlpha: 1,
+            x: 0,
+            duration: 100
+        }, ninthSceneStart + 100)
+        .set(".decouvrir_seventhBloc2", {
+            autoAlpha: 0,
+            x: -50,
+        }, ninthSceneStart)
+        .to(".decouvrir_seventhBloc2", {
+            autoAlpha: 1,
+            x: 0,
+            duration: 100
+        }, ninthSceneStart + 200)
+        .set(".decouvrir_seventhBloc3", {
+            autoAlpha: 0,
+            x: -50,
+        }, ninthSceneStart)
+        .to(".decouvrir_seventhBloc3", {
+            autoAlpha: 1,
+            x: 0,
+            duration: 100
+        }, ninthSceneStart + 300)
 
         window.addEventListener("scroll", function() {
             document.getElementById("my_audio").volume = 0; 
@@ -373,19 +495,20 @@ export default class DecouvrirLeCentre extends Component{
                         <p className="decouvrir_fourthBloc2">Vivamus neque dui, vulputate at</p>
                         <p className="decouvrir_fourthBloc3">risus a, tristique eleifend neque.</p>
                     </section>
-                    <section className="decouvrir_fifthBloc">
-                        <img className="decouvrir_danse" src={Danse}/>
-                        <img className="decouvrir_fifthBloc_topImg" src={bloc5top}/>
-                        <img className="decouvrir_fifthBloc_bottomImg" src={bloc5bot}/>
-                        <h3 className="decouvrir_fifthBloc1">Un titre</h3>
-                        <p className="decouvrir_fifthBloc2">Vivamus neque dui, vulputate at</p>
-                        <p className="decouvrir_fifthBloc3">risus a, tristique eleifend neque.</p>
+                    <section className="decouvrir_sixthBloc">
+                        <img className="decouvrir_sixthBloc_img" src={TableauMur}/>
+                        <img className="decouvrir_sixthBloc_topImg" src={bloc6top}/>
+                        <img className="decouvrir_sixthBloc_bottomImg" src={bloc6bot}/>
+                        <h3 className="decouvrir_sixthBloc1">Un titre</h3>
+                        <p className="decouvrir_sixthBloc2">Vivamus neque dui, vulputate at</p>
+                        <p className="decouvrir_sixthBloc3">risus a, tristique eleifend neque.</p>
                     </section>
-                </section>
-                <section className="animHelper">
-                    {/* <div className="a100"></div>
-                    <div className="a200"></div>
-                    <div className="a200"></div> */}
+                    <section className="decouvrir_seventhBloc">
+                        <img className="decouvrir_seventhBloc_img" src={Masque}/>
+                        <img className="decouvrir_seventhBloc_topImg" src={bloc7top}/>
+                        <img className="decouvrir_seventhBloc_bottomImg" src={bloc7bot}/>
+                        <Link to="/billetterie" className="mainButton">Acheter un billet</Link>
+                    </section>
                 </section>
             </>
         )
