@@ -101,7 +101,6 @@ export default class Billetterie extends Component{
             totalBillets += parseInt(tarif.total)
             totalPrice += tarif.totalPrice
         })
-        e.preventDefault();
         const data = {
             "totalBillets": totalBillets,
             "totalPrice": totalPrice,
@@ -115,7 +114,6 @@ export default class Billetterie extends Component{
             "pays": pays
         } 
 
-        console.log(data)
         axios
         .post('https://radiant-falls-78689.herokuapp.com/api/addreservations/4v8e61bfdqs4789fgf32e38vcxq2ezafbv7489d123fvdeza45b3vfdgvfdfdzafbbb', {
             data
