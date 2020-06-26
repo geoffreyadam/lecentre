@@ -500,9 +500,9 @@ export default class DecouvrirLeCentre extends Component{
                         <img className="decouvrir_sixthBloc_img" src={TableauMur}/>
                         <img className="decouvrir_sixthBloc_topImg" src={bloc6top}/>
                         <img className="decouvrir_sixthBloc_bottomImg" src={bloc6bot}/>
-                        <h3 className="decouvrir_sixthBloc1">Un titre</h3>
-                        <p className="decouvrir_sixthBloc2">Vivamus neque dui, vulputate at</p>
-                        <p className="decouvrir_sixthBloc3">risus a, tristique eleifend neque.</p>
+                        <h3 className="decouvrir_sixthBloc1">Au cœur des Bassins à Flot</h3>
+                        <p className="decouvrir_sixthBloc2">La Base sous-marine brise la glace</p>
+                        <p className="decouvrir_sixthBloc3">avec son histoire et fait peau neuve !</p>
                     </section>
                     <section className="decouvrir_seventhBloc">
                         <img className="decouvrir_seventhBloc_img" src={Masque}/>
