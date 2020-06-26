@@ -453,8 +453,7 @@ export default class DecouvrirLeCentre extends Component{
         }, ninthSceneStart + 300)
 
         window.addEventListener("scroll", function() {
-            document.getElementById("my_audio").volume = 0.3; 
-            document.getElementById("my_audio").play();
+
             if (!requestId) {
                 requestId = requestAnimationFrame(update);
             }
@@ -464,6 +463,8 @@ export default class DecouvrirLeCentre extends Component{
             tl.time(window.pageYOffset + triggerOffset);
             requestId = null;
         }
+        document.getElementById("my_audio").volume = 0.3; 
+        document.getElementById("my_audio").play();
     }
     
     render(){
