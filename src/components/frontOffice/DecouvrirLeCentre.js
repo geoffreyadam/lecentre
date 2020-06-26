@@ -494,7 +494,7 @@ export default class DecouvrirLeCentre extends Component{
                         <img src={TableauSol}/>
                         <h3 className="decouvrir_fourthBloc1">La nouvelle bulle artistique </h3>
                         <p className="decouvrir_fourthBloc2">Entre laboratoire de travail et lieu de rencontres artistiques, </p>
-                        <p className="decouvrir_fourthBloc3">e Centre vous invite à plonger dans la nouvelle vague des arts numériques</p>
+                        <p className="decouvrir_fourthBloc3">le Centre vous invite à plonger dans la nouvelle vague des arts numériques</p>
                     </section>
                     <section className="decouvrir_sixthBloc">
                         <img className="decouvrir_sixthBloc_img" src={TableauMur}/>
