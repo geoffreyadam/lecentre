@@ -486,7 +486,7 @@ export default class DecouvrirLeCentre extends Component{
                     </section>
                     <section className="decouvrir_thirdBloc">
                         <img src={Neon}/>
-                        <h3 className="decouvrir_thirdBloc1">Un titre</h3>
+                        <h3 className="decouvrir_thirdBloc1">Un espace hors du temps</h3>
                         <p className="decouvrir_thirdBloc2">Explorez et découvrez les artistes qui habillent</p>
                         <p className="decouvrir_thirdBloc3">les profondeurs de la Base sous-marine</p>
                     </section>
