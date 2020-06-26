@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header/Header';
 import Light from '../../images/decouvrirCentre/light.jpg';
-import Underwater from '../../sons/itai.mp3';
+import Underwater from '../../sons/underwater2.mp3';
 import bloc2top from '../../images/decouvrirCentre/illus/illu_14.gif';
 import bloc2bot from '../../images/decouvrirCentre/typos/le_centre.gif';
 import bloc5bot from '../../images/decouvrirCentre/illus/illu_17.gif';
@@ -459,6 +459,7 @@ export default class DecouvrirLeCentre extends Component{
                 requestId = requestAnimationFrame(update);
             }
         });
+
     
         function update() {
             tl.time(window.pageYOffset + triggerOffset);
