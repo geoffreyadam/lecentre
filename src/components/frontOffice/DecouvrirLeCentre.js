@@ -487,14 +487,14 @@ export default class DecouvrirLeCentre extends Component{
                     <section className="decouvrir_thirdBloc">
                         <img src={Neon}/>
                         <h3 className="decouvrir_thirdBloc1">Un titre</h3>
-                        <p className="decouvrir_thirdBloc2">Vivamus neque dui, vulputate at</p>
-                        <p className="decouvrir_thirdBloc3">risus a, tristique eleifend neque.</p>
+                        <p className="decouvrir_thirdBloc2">Explorez et découvrez les artistes qui habillent</p>
+                        <p className="decouvrir_thirdBloc3">les profondeurs de la Base sous-marine</p>
                     </section>
                     <section className="decouvrir_fourthBloc">
                         <img src={TableauSol}/>
-                        <h3 className="decouvrir_fourthBloc1">Un titre</h3>
-                        <p className="decouvrir_fourthBloc2">Vivamus neque dui, vulputate at</p>
-                        <p className="decouvrir_fourthBloc3">risus a, tristique eleifend neque.</p>
+                        <h3 className="decouvrir_fourthBloc1">La nouvelle bulle artistique </h3>
+                        <p className="decouvrir_fourthBloc2">Entre laboratoire de travail et lieu de rencontres artistiques, </p>
+                        <p className="decouvrir_fourthBloc3">e Centre vous invite à plonger dans la nouvelle vague des arts numériques</p>
                     </section>
                     <section className="decouvrir_sixthBloc">
                         <img className="decouvrir_sixthBloc_img" src={TableauMur}/>
